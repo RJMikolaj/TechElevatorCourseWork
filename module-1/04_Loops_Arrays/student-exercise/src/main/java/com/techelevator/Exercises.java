@@ -1,7 +1,8 @@
 package com.techelevator;
 
 public class Exercises {
-	
+	// Loops and Arrays Exercises Due Monday
+	// First ten is just arrays, no loops
 	/*
 	 1. Given an array of ints, return true if 6 appears as either the first or last element in the array. 
 	 The array will be length 1 or more.
@@ -10,6 +11,7 @@ public class Exercises {
 	 firstLast6([13, 6, 1, 2, 3]) → false
 	 */
 	public boolean firstLast6(int[] nums) {
+		if 
 		return false;
 	}
 
@@ -21,6 +23,7 @@ public class Exercises {
 	 sameFirstLast([1, 2, 1]) → true
 	 */
 	public boolean sameFirstLast(int[] nums) {
+		if int
 		return false;
 	}
 
@@ -29,7 +32,7 @@ public class Exercises {
 	 makePi() → [3, 1, 4]
 	 */
 	public int[] makePi() {
-		return new int[] {};
+		return new int[] {3, 1, 4};
 	}
 
 	/*
