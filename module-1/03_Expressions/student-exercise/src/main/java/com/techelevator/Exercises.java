@@ -108,7 +108,7 @@ public class Exercises {
 		boolean solution = true;
 		if ((a >= 0 && b < 0) || (b >= 0 && a < 0)) {
 			solution = true;
-		} else if (a < 0 && b < 0) {
+		} else if negative = true(a < 0 && b < 0) {
 			solution = true;
 		}
 		
@@ -196,6 +196,7 @@ public class Exercises {
 	 * intMax(1, 3, 2) → 3 intMax(3, 2, 1) → 3
 	 */
 	public int intMax(int a, int b, int c) {
+		int largestNumber = nums[]
 
 		return 0;
 	}
@@ -206,7 +207,11 @@ public class Exercises {
 	 * true in3050(30, 41) → false in3050(40, 50) → true
 	 */
 	public boolean in3050(int a, int b) {
-		return false;
+		boolean result = true;
+		if (((a >=30 && a <= 40) && (b >=30 && b <= 40)) || ((a >=40 && a <= 50) && (b >=40 && b <= 50))) {
+		return result; }
+		else result = false;{
+		
 	}
 
 	/*
@@ -348,7 +353,7 @@ public class Exercises {
 		} else { 
 			result = false;
 		}
-		return false;
+		return result;
 	}
 
 	/*
