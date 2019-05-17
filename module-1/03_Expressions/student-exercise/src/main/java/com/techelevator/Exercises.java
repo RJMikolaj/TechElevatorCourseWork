@@ -196,9 +196,9 @@ public class Exercises {
 	 * intMax(1, 3, 2) → 3 intMax(3, 2, 1) → 3
 	 */
 	public int intMax(int a, int b, int c) {
-		int largestNumber = nums[]
-
-		return 0;
+		int largestNumber = nums(a, b, c); {
+		}
+		return largestNumber;
 	}
 
 	/*
@@ -209,8 +209,8 @@ public class Exercises {
 	public boolean in3050(int a, int b) {
 		boolean result = true;
 		if (((a >=30 && a <= 40) && (b >=30 && b <= 40)) || ((a >=40 && a <= 50) && (b >=40 && b <= 50))) {
-		return result; }
-		else result = false;{
+	 }
+		return result;
 		
 	}
 
