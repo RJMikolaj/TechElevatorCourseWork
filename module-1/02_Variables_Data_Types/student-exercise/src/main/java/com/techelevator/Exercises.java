@@ -37,10 +37,17 @@ public class Exercises {
         3. 3 raccoons are playing in the woods. 2 go home to eat dinner. How
         many raccoons are left in the woods?
         */
+<<<<<<< HEAD
 		int racoonsInWoods = 3;
 		int racoonsThatWentHome = 2;
 		int racoonsLeftInWoods = racoonsInWoods - racoonsThatWentHome;
 		System.out.println(racoonsLeftInWoods);
+=======
+		int raccoonsInWoods = 3;
+		int raccoonsThatWentHome = 2;
+		int raccoonsLeftInWoods = raccoonsInWoods - raccoonsThatWentHome;
+		
+>>>>>>> 73c87d4aa3f4f0c39a2187536413923a99de78b8
         /*
         4. There are 5 flowers and 3 bees. How many less bees than flowers?
         */

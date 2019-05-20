@@ -11,7 +11,10 @@ public class Exercises {
 	 * sleepIn(true, false) → false sleepIn(false, true) → true
 	 */
 	public boolean sleepIn(boolean weekday, boolean vacation) {
+<<<<<<< HEAD
 		// Not a weekday, sleep in
+=======
+>>>>>>> 73c87d4aa3f4f0c39a2187536413923a99de78b8
 		return !weekday || vacation;
 	}
 
@@ -23,6 +26,7 @@ public class Exercises {
 	 * monkeyTrouble(true, false) → false
 	 */
 	public boolean monkeyTrouble(boolean aSmile, boolean bSmile) {
+<<<<<<< HEAD
 		// If a is smiling and b is smiling, we're in trouble
 		if (aSmile == true && bSmile == true) {
 			return true;
@@ -34,6 +38,9 @@ public class Exercises {
 		// Otherwise we good
 		return false;
 		// just doing return aSmile == bSmile under boolean statement also works
+=======
+		return aSmile == bSmile;
+>>>>>>> 73c87d4aa3f4f0c39a2187536413923a99de78b8
 	}
 
 	/*
