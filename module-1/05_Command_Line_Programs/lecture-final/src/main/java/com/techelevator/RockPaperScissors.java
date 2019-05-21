@@ -19,6 +19,7 @@ public class RockPaperScissors {
 		int playerWins = 0;
 		int computerWins = 0;
 		
+<<<<<<< HEAD
 		for ( ; true ; ) {
 		
 		System.out.print("Select (1) Rock, (2) Paper, or (3) Scissors, or (0) to quit >>>");
@@ -55,6 +56,47 @@ public class RockPaperScissors {
 		System.out.println("\n------------------------------------");
 		System.out.printf("%-10s %-10s %-10s", playerWins, computerWins, ties);
 	}
+=======
+		for ( ; true ; ) { 
+		
+			System.out.print("Select (1) Rock, (2) Paper, (3) Scissors, or (0) to quit >>>");
+			int userChoice = in.nextInt();
+			in.nextLine();
+			
+			if ( userChoice < 0 || userChoice > 3) {
+				System.out.println("*** INVALID SELECTION ***");
+				continue;
+			}
+			
+			if (userChoice == 0) {
+				System.out.println("Thank you for playing!");
+				break;
+			}
+			
+			int computerChoice = (int) (Math.random() * 3) + 1;
+			
+			System.out.println("You chose " + choices[userChoice - 1]);
+			System.out.println("The computer selected " + choices[computerChoice - 1]);
+			
+			if (userChoice == computerChoice) {
+				System.out.println("Tie");
+				ties++;
+			} else if ( (userChoice == 1 && computerChoice == 3) || 
+					(userChoice == 2 && computerChoice == 1) || (userChoice == 3 && computerChoice == 2) ) {
+				System.out.println("The Player wins!");
+				playerWins++;
+			} else {
+				System.out.println("The Computer wins!");
+				computerWins++;
+			}
+		}
+		
+		System.out.printf("%-10s  %-10s  %-10s", "Player", "Computer", "Tie");
+		System.out.println("\n-----------------------------------------");
+		System.out.printf("%-10s  %-10s  %-10s", playerWins, computerWins, ties);
+		
+		
+>>>>>>> 0014bcbb0cf2d78a653424565293694b3b73767d
 	}
 	
 	
