@@ -11,14 +11,14 @@ public class TempConvert {
 			*/
 public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
-		System.out.print("Enter a temperature in Fahrenheit: ");
+		System.out.println("Enter a temperature in Fahrenheit: ");
 		float fahrenheit = (int) input.nextInt();
 		float celsius = ((fahrenheit -32) / (float) 1.8);
 		System.out.println( "Your temperature in Celsius is: " + (int)celsius);
 		
 
 	Scanner newInput = new Scanner(System.in);
-	System.out.print("Enter a temperature in Celsius: ");
+	System.out.println("Enter a temperature in Celsius: ");
 	float tc = (int) input.nextInt();
 	float tf = ((tc * (float) 1.8) + 32);
 	System.out.println("Your temperature in Farenheit is: " +(int) tf);
