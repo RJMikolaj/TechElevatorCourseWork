@@ -8,6 +8,7 @@ import java.util.Queue;
 import java.util.Set;
 import java.util.Stack;
 
+
 public class Lecture {
 
 	public static void main(String[] args) {
@@ -15,8 +16,9 @@ public class Lecture {
 		System.out.println("       LISTS");
 		System.out.println("####################");
 		
-		List<String> instructors = new ArrayList<String>();
+		List<String> instructors = new ArrayList<String>(); 
 		
+
 		//Can add to the List using the add() method
 		instructors.add("John");
 		instructors.add("Steve");
@@ -29,6 +31,18 @@ public class Lecture {
 		
 		// Can get the length of the List using size()
 		
+
+		// Can add to the List using the add() method
+		instructors.add("John");
+		instructors.add("Steve");
+		instructors.add("Andrew");
+		instructors.add("Stephanie");
+
+		System.out.println("####################");
+		System.out.println("Lists are ordered");
+		System.out.println("####################");
+								// Can get the length of the List using size()
+
 		for ( int i = 0 ; i < instructors.size() ; i++) {
 			// Can get an item by index using the get(index) method
 			System.out.println(instructors.get(i));
@@ -39,15 +53,25 @@ public class Lecture {
 		System.out.println("####################");
 		
 		instructors.add("John");
-		
+
+
+		for ( int i = 0 ; i < instructors.size() ; i++) {
+			System.out.println(instructors.get(i));
+		}
+
 		System.out.println("####################");
 		System.out.println("Lists allow elements to be inserted in the middle");
 		System.out.println("####################");
 
+
 		// Add can also take two arguments ( index, value)
 		
 		instructors.add(2, "Rachelle");
+
+		// Add can also take 2 arguments  ( index, value ) 
+		instructors.add(2, "Rachelle");
 		
+//>>>>>>> bc9d20548639aa66e67032cb063c48c5d2cc6d0e
 		for ( int i = 0 ; i < instructors.size() ; i++) {
 			System.out.println(instructors.get(i));
 		}
@@ -57,24 +81,37 @@ public class Lecture {
 		System.out.println("####################");
 		
 		// Can remove from the list by index using remove(index)
+//<<<<<<< HEAD
 		
+//=====
+//>>>>>>> bc9d20548639aa66e67032cb063c48c5d2cc6d0e
 		instructors.remove(5);
 		
 		for ( int i = 0 ; i < instructors.size() ; i++) {
 			System.out.println(instructors.get(i));
 		}
+//<<<<<<< HEAD
 		
+//=======
+
+//>>>>>>> bc9d20548639aa66e67032cb063c48c5d2cc6d0e
 		System.out.println("####################");
 		System.out.println("Find out if something is already in the List");
 		System.out.println("####################");	
 
 		boolean isAndrewInInstructors = instructors.contains("Andrew");
+//<<<<<< HEAD
 		System.out.println("Andrew is in the list: " + isAndrewInInstructors);
 		
+//=======
+		System.out.println("Andrew is in the the list: " + isAndrewInInstructors);
+
+//>>>>>>> bc9d20548639aa66e67032cb063c48c5d2cc6d0e
 
 		System.out.println("####################");
 		System.out.println("Lists can be turned into an array");
 		System.out.println("####################");
+//<<<<<<< HEAD
 	
 		// Declare an Array   = Pass toArray to a new Array of the proper type and size to be filled
 		String[] instructorsArray = instructors.toArray(new String[instructors.size()]);
@@ -82,6 +119,13 @@ public class Lecture {
 		// Collections can only use Reference Types
 		//List<int> numbers = new ArrayList<int>();
 
+		
+		// Declare an Array       =   Pass toArray a new Array of the proper type and size to be filled
+		String[] instructorsArray = instructors.toArray(new String[instructors.size()]);
+//>>>>>>> bc9d20548639aa66e67032cb063c48c5d2cc6d0e
+
+		// Collections can only use Reference Types
+		//List<int> numbers = new ArrayList<int>();
 
 		System.out.println("####################");
 		System.out.println(" PRIMITIVE WRAPPERS");
@@ -90,7 +134,32 @@ public class Lecture {
 		/* Every primitive data type has an equivalent "primitive wrapper class" that is an object representation 
 		 * of a primitive value */
 		Integer employees = new Integer(25);		// Can be initialized with an int
+
 		Integer piecesOfCake = new Integer("24");   // Can be initialized with a String that contains an int
+
+		Integer piecesOfCake = new Integer("24");	// Or can be initialized with a String that contains an int
+		
+		if (employees > piecesOfCake) {
+			System.out.println("Not enough cake");
+		}
+		
+		Integer objX = 10;
+		int intY = 20;
+		intY = objX + 5;
+		objX = intY + 10;
+		
+		Double accountBalance = null;
+		// Since accountBalance is null, the next line causes a NullPointerException when autoboxing happens
+		//double newBalance = accountBalance + 100;
+
+		// Use the Wrapper classes with Collections
+		List<Integer> numbers = new ArrayList<Integer>();
+		numbers.add(10);
+		numbers.add(20);
+		numbers.add(30);
+		numbers.add(40);
+		numbers.add(new Integer("50"));
+>>>>>>> bc9d20548639aa66e67032cb063c48c5d2cc6d0e
 		
 		if (employees > piecesOfCake) {
 			System.out.println("Not enough cake");
@@ -134,22 +203,51 @@ public class Lecture {
 		System.out.println("       FOREACH");
 		System.out.println("####################");
 		System.out.println();
+
 		
 		List<String>names = new ArrayList<String>();
 				for (String personName : names) {
 					System.out.println(personName);
 				}
 
+
+		for (Integer num : numbers) {
+			System.out.println(num);
+		}
+		
+		for (String name : instructors) {
+			System.out.println(name);
+		}
+		
+		// Equivalent standard for loop:
+//		for ( int i = 0 ; i < instructors.size() ; i++) {
+//			System.out.println(instructors.get(i));
+//		}
+
+		double[] doubles = { 2.5d, 3.67d, 1.2d, 0.75d };
+		for (double d : doubles) {
+			System.out.println( d * 2 );
+		}
+		
+
 		System.out.println("####################");
 		System.out.println("       QUEUES");
 		System.out.println("####################");
 		System.out.println();
 
-
+		Queue<String> tasks = new LinkedList<String>();
+		
+		// Add Items to the Queue with Offer
+		tasks.offer("Clean dishes");
+		tasks.offer("Sweep floor");
+		tasks.offer("clean counters");
+		tasks.offer("scrub ceiling");
+		
 		/////////////////////
 		// PROCESSING ITEMS IN A QUEUE
 		/////////////////////
 		
+
 		Queue<String> tasks = new LinkedList<String>();
 		
 		//Add Items to the Queue with Offer
@@ -161,12 +259,17 @@ public class Lecture {
 		//Peak allows the next item to be viewed, without changing the list
 		System.out.println("The next tasks is: " + tasks.peek());
 		
-		
+
+		// Peek allows the next item to be viewed, without changing the list
+		System.out.println("The next tasks is: " + tasks.peek());
+
+
 		while (!tasks.isEmpty()) {
 			// Use poll to get and remove the next item
 			System.out.println(tasks.poll());
 			System.out.println("Tasks remaining: " + tasks.size());
 		}
+
 
 
 		System.out.println("####################");
@@ -180,18 +283,32 @@ public class Lecture {
 		// PUSHING ITEMS TO THE STACK
 		//////////////////// 
 		
+
 		// add items to the stack using push
 		history.push("http://google.com");
 		history.push("http://cnn.com");
 		history.push("http://techelevator.com");
 		history.push("http://dashboard.techelevator.com");
 
+		// Add items to the Stack using push
+		history.push("http://www.google.com");
+		history.push("http://cnn.com");
+		history.push("http://techelevator.com");
+		history.push("https://blog.codinghorror.com");
+		history.push("http://dashboard.techelevator.com");
+	
+
 
 		////////////////////
 		// POPPING THE STACK
 		////////////////////
+
 		while (!history.isEmpty()) {
 			//Get and remove the next item from the Stack using pop()
+
+		while ( !history.isEmpty() ) {
+			// Get and Remove the next item from the Stack using pop()
+
 			String previousPage = history.pop();
 			System.out.println("Previous Page: " + previousPage);
 		}
@@ -201,7 +318,11 @@ public class Lecture {
 		for (int n : nums) {
 			numStack.push(n);
 		}
+
 		while (!numStack.isEmpty()) {
+
+		while ( !numStack.isEmpty() ) {
+
 			System.out.println(numStack.pop());
 		}
 	}

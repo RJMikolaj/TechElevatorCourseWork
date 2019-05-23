@@ -1,5 +1,6 @@
 package com.techelevator;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
@@ -8,6 +9,7 @@ import java.util.List;
 import java.util.Queue;
 import java.util.Set;
 import java.util.Stack;
+import java.util.TreeSet;
 
 public class Exercises {
 
@@ -21,9 +23,18 @@ public class Exercises {
 	 array2List( {"Red", "Orange", "Yellow"} )  ->  ["Red", "Orange", "Yellow"]
 	 array2List( {"Left", "Right", "Forward", "Back"} )  ->  ["Left", "Right", "Forward", "Back"] 
 	 */
+	// Return type should be starting point, like here it's List<String>
+	
 	public List<String> array2List(String[] stringArray) {
-		return null;
+		 List<String> result = new ArrayList<String>();
+	     
+	      for(int i = 0; i < stringArray.length; i++){
+	      String item = stringArray[i];
+	      result.add(item);
 	}
+	      return result;
+	      }
+	
 	
 	/*
 	 Given a list of Strings, return an array containing the same Strings in the same order 
@@ -32,7 +43,9 @@ public class Exercises {
 	 list2Array( ["Left", "Right", "Forward", "Back"] )  ->  {"Left", "Right", "Forward", "Back"}
 	 */
 	public String[] list2Array(List<String> stringList) {
-		return null;
+		String[] listArray = stringList.toArray(new String[stringList.size()]);
+        
+		return listArray;
 	}
 	
 	/*
@@ -43,7 +56,19 @@ public class Exercises {
 	 no4LetterWords( {"Jack", "Jill", "Jane", "John", "Jim"} )  ->  ["Jim"]
 	 */
 	public List<String> no4LetterWords(String[] stringArray) {
-		return null;
+		 List<String> result = new ArrayList<String>();
+	       
+	      if(stringArray.length > 0) {   
+	      for(int i = 0; i < stringArray.length; i++){
+	      String item = stringArray[i];
+	                   
+	        if(item.length() != 4){
+	         result.add(item);
+	                    }  
+	                }
+	        }
+	       
+		return result;
 	}
 
 
@@ -56,8 +81,20 @@ public class Exercises {
 		-> ["way", "the", "all", "jingle", "bells", "jingle", "bells", "jingle"]
 	 */
 	public List<String> reverseList(List<String> stringList) {
-		return null;
-	}
+		 Stack<String> stackResult = new Stack<String>();
+	     List<String> stackToList = new ArrayList<String>();
+	       
+	        for(int i = 0; i < stringList.size(); i++)
+	        {
+	            stackResult.push(stringList.get(i));
+	        }
+	        while(stackResult.size() > 0) {
+	           
+	            stackToList.add(stackResult.pop());
+	               
+	        }
+	        return stackToList;
+	    }
 
 	/*
 	 Given an array of ints, divide each int by 2, and return an ArrayList of Doubles.
@@ -66,8 +103,16 @@ public class Exercises {
 	 arrayInt2ListDouble( {84, 99, 3285, 13, 877} ) -> [42, 49.5, 1642.5, 6.5, 438.5]
 	 */
 	public List<Double> arrayInt2ListDouble(int[] intArray) {
-		return null;
-	}
+		 List<Double> doublesResult = new ArrayList<Double>();
+	        double dub;
+	        if(intArray.length > 0) {
+	        for(int i = 0; i < intArray.length; i++) {
+	           dub = intArray[i] / 2.0;
+	           doublesResult.add(dub);
+	            }
+	        }
+	        return doublesResult;
+	    }
 	
 	/*
 	 Given a List of Integers, return the largest value.
@@ -76,7 +121,14 @@ public class Exercises {
 	 findLargest( [34070, 1380, 81238, 7782, 234, 64362, 627] ) -> 64362
 	 */
 	public Integer findLargest(List<Integer> integerList) {
-		return null;
+		int max = integerList.get(0);
+		       
+		for(int i = 0; i < integerList.size(); i++) {
+		if(integerList.get(i) > max) {
+		max = integerList.get(i);
+  }
+    }
+	 return max;
 	}
 	
 	/*
@@ -85,9 +137,16 @@ public class Exercises {
 	 oddOnly( {1143, 555, 7, 1772, 9953, 643} ) -> [1143, 555, 7, 9953, 643]
 	 oddOnly( {734, 233, 782, 811, 3, 9999} ) -> [233, 811, 3, 9999]  
 	 */
-	public List<Integer> oddOnly(Integer[] integerArray) {
-		return null;
-	}
+    public List<Integer> oddOnly(Integer[] integerArray) {
+        List<Integer> intResult = new ArrayList<Integer>();
+       
+        for(int i = 0; i < integerArray.length; i++) {
+        if(integerArray[i] % 2 == 1) {
+       intResult.add(integerArray[i]);
+            }
+        }
+        return intResult;
+    }
 	
 	/* 
 	 Given a List of Integers, and an int value, return true if the int value appears two or more times in 
@@ -113,8 +172,22 @@ public class Exercises {
 	 HINT: To convert an integer x to a string you can call x.toString() in your code (e.g. if x = 1 then x.ToString() equals "1")
 	 */
 	public List<String> fizzBuzzList(Integer[] integerArray) {
-		return null;
-	}
+        List<String> fizzBuzz = new ArrayList<String>();
+       
+        for(int i = 0; i < integerArray.length; i++) {
+            if((integerArray[i] % 3 == 0) && (integerArray[i] % 5 == 0)) {
+                fizzBuzz.add("FizzBuzz");
+            }else if(integerArray[i] % 3 == 0) {
+            	fizzBuzz.add("Fizz");
+            }else if(integerArray[i] % 5 == 0) {
+            	fizzBuzz.add("Buzz");
+            }else {
+            	fizzBuzz.add(integerArray[i].toString());
+            }
+           
+        }
+        return fizzBuzz;
+    }
 
 	/*
 	 Given two lists of Integers, interleave them beginning with the first element in the first list followed
@@ -131,7 +204,7 @@ public class Exercises {
 	 Given a list of Integers representing seat numbers, group them into ranges 1-10, 11-20, and 21-30.
 	 (Any seat number less than 1, or greater than 30 is invalid, and can be ignored.) Preserve the order
 	 in which the seat number entered their associated group. Return a list of the grouped Integers 1-10,
-	 11-20, and 21-30. (Hint: Think multiple queues)
+	 11-20, and 21-30. (Hint: Think multiple lines)
 	 boardingGate( [1, 13, 43, 22, 8, 11, 30, 2, 4, 14, 21] ) -> [1, 8, 2, 4, 13, 11, 14, 22, 30, 21]
 	 boardingGate( [29, 19, 9, 21, 11, 1, 0, 25, 15, 5, 31] ) -> [9, 1, 5, 19, 11, 15, 29, 21, 25]
 	 boardingGate( [0, -1, 44, 31, 17, 7, 27, 16, 26, 6] ) -> [7, 6, 17, 16, 27, 26]
