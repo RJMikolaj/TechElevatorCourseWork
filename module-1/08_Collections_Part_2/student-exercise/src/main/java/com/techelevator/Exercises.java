@@ -8,7 +8,7 @@ import java.util.Map;
 
 public class Exercises {
 
-	// when it comes to calculations, use integeres once, then keep using result Ex:
+	// when it comes to calculations, use integers once, then keep using result Ex:
 	//int Amt1 = 10;
 	//int Amt2 = 20;
 	//int whole = 5;
