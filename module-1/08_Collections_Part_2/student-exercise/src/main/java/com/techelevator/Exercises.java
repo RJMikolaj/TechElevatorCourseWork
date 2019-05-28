@@ -6,6 +6,7 @@ import java.util.Map;
 
 
 
+
 public class Exercises {
 
 	// when it comes to calculations, use integers once, then keep using result Ex:
@@ -97,7 +98,7 @@ public class Exercises {
 	 * isItOnSale("dungeon9999") → 0.00
 	 *
 	 */
-	public Double isItOnSale(String itemNumber) {
+	public Double isItOnSale(double itemNumber) {
 		
 		Map<String, Double> itemsOnSale = new HashMap<String, Double>();
 		itemsOnSale.put("KITCHEN4001", 0.20);
@@ -107,15 +108,13 @@ public class Exercises {
 		itemsOnSale.put("BEDROOM3434", 0.60);
 		itemsOnSale.put("BATH0073", 0.15);
 		
-		Double name = 0.00;
+		Double result = 0.00;
 			
 		for (Double value : itemsOnSale.values()) {
-			if (value.equalsIgnoreCase(itemNumber)) {
-				Map <String, Double>get.value;
+				return itemsOnSale.get(value);
 			}
-		}
+		return result;
 		
-		return name;
 	}
 
 	/*
@@ -169,8 +168,19 @@ public class Exercises {
 	 *
 	 */
 	public Map<String, Integer> wordCount(String[] words) {
-		return null;
-	}
+	
+		Map<String, Integer> wordsToCount = new HashMap<String, Integer>();
+		for (String diffString : words) {
+			if (!wordsToCount.containsKey(diffString)) {
+	         wordsToCount.put(diffString, 1);
+	    } else {
+	            int count = wordsToCount.get(diffString);
+	            wordsToCount.put(diffString, count + 1);
+	            }
+	        }
+	        return wordsToCount;
+
+	    }
 
 	/*
 	 * Given an array of int values, return a Map<Integer, Integer> with a key for each int, with the value the
@@ -184,7 +194,21 @@ public class Exercises {
 	 *
 	 */
 	public Map<Integer, Integer> integerCount(int[] ints) {
-		return null;
+		
+		Map<Integer, Integer> lesserCousin = new HashMap<Integer, Integer>();
+		for (int evenLesserCousin : ints) {
+			if (!lesserCousin.containsValue(evenLesserCousin)) {
+				lesserCousin.put(evenLesserCousin, 1);
+			} else {
+				int count = lesserCousin.get(evenLesserCousin);
+				lesserCousin.put(evenLesserCousin, count + 1);
+			}
+		}
+		return lesserCousin;
+		
+		
+		
+		
 	}
 
 	/*
@@ -197,8 +221,14 @@ public class Exercises {
 	 *
 	 */
 	public Map<String, Boolean> wordMultiple(String[] words) {
-		return null;
-	}
+		  Map map = new HashMap();
+		  for(String twoTimes : words)  {
+		    if (!map.containsKey(twoTimes)) {
+		    map.put(twoTimes, false);
+		    } else {
+		    map.put(twoTimes, true); } 
+		    } return map;
+		}
 
 	/*
 	 * Given two maps, Map<String, Integer>, merge the two into a new map, Map<String, Integer> where keys in Map2,
