@@ -1,4 +1,8 @@
 package com.techelevator;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4165fd5e27f7b365c0fa995bfbd01fed917402b0
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -10,7 +14,10 @@ public class PaintCalc {
 		
 		List<Rectangle> walls = new ArrayList<Rectangle>();
 		
+<<<<<<< HEAD
 		
+=======
+>>>>>>> 4165fd5e27f7b365c0fa995bfbd01fed917402b0
 		while(true) {
 			
 			System.out.println();
@@ -27,8 +34,10 @@ public class PaintCalc {
 				int height = Integer.parseInt(scan.nextLine());
 				System.out.print("Enter wall width >>> ");
 				int width = Integer.parseInt(scan.nextLine());
-				int area = height * width;
-				System.out.println("Added "+height+"x"+width+" wall - "+area+" square feet");
+
+				Rectangle wall = new Rectangle(width, height);
+				walls.add(wall);
+				System.out.println("Added "+ wall);
 				
 				Rectangle wall = new Rectangle(width, height);
 				walls.add(wall);
@@ -36,6 +45,7 @@ public class PaintCalc {
 				
 			} else if(userChoice.equals("2")) {
 				
+<<<<<<< HEAD
 				int totalArea = 0;
 				int count = 1;
 				for (Rectangle wall : walls) {
@@ -48,6 +58,15 @@ public class PaintCalc {
 				System.out.println("Wall 4: 10x15 - 150 square feet"); // PROTOTYPE ONLY!!!
 				
 				int totalArea = 600; // PROTOTYPE ONLY!!!
+=======
+				int totalArea = 0; 
+				int count = 1;
+				for (Rectangle wall : walls) {
+					totalArea += wall.getArea();
+					System.out.println("Wall " + count + ": " + wall);
+					count++;
+				}
+>>>>>>> 4165fd5e27f7b365c0fa995bfbd01fed917402b0
 				System.out.println("===============================");
 				System.out.println("Total Area: "+totalArea+" square feet");
 				

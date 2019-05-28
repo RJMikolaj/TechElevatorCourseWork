@@ -1,10 +1,17 @@
 package com.techelevator;
 
 public class Rectangle {
+<<<<<<< HEAD
 	
 	//Member Variables
 	public int height;
 	public int width;
+=======
+
+	// Member Variables
+	private int height;
+	private int width;
+>>>>>>> 4165fd5e27f7b365c0fa995bfbd01fed917402b0
 	
 	public Rectangle() {
 		
@@ -29,8 +36,13 @@ public class Rectangle {
 
 	public void setWidth(int width) {
 		this.width = Math.abs(width);
+<<<<<<< HEAD
 	}	
 		
+=======
+	}
+	
+>>>>>>> 4165fd5e27f7b365c0fa995bfbd01fed917402b0
 	public int getArea() {
 		return this.height * this.width;
 	}
@@ -38,7 +50,11 @@ public class Rectangle {
 	public boolean isLargerThan(Rectangle other) {
 		return this.getArea() > other.getArea();
 	}
+<<<<<<< HEAD
 		
+=======
+	
+>>>>>>> 4165fd5e27f7b365c0fa995bfbd01fed917402b0
 	public boolean isLargerThan(int width, int height) {
 		return (this.height * this.width) > width * height;
 	}
@@ -53,7 +69,12 @@ public class Rectangle {
 		Rectangle other = (Rectangle) obj;
 		return this.height == other.height && this.width == other.width;
 	}
+<<<<<<< HEAD
 }
 	
 
 
+=======
+	
+}
+>>>>>>> 4165fd5e27f7b365c0fa995bfbd01fed917402b0

@@ -98,7 +98,24 @@ public class Exercises {
 	 *
 	 */
 	public Double isItOnSale(String itemNumber) {
-		return null;
+		
+		Map<String, Double> itemsOnSale = new HashMap<String, Double>();
+		itemsOnSale.put("KITCHEN4001", 0.20);
+		itemsOnSale.put("GARAGE1070", 0.15);
+		itemsOnSale.put("LIVINGROOM", 0.10);
+		itemsOnSale.put("KITCHEN6073", 0.40);
+		itemsOnSale.put("BEDROOM3434", 0.60);
+		itemsOnSale.put("BATH0073", 0.15);
+		
+		Double name = 0.00;
+			
+		for (Double value : itemsOnSale.values()) {
+			if (value.equalsIgnoreCase(itemNumber)) {
+				Map <String, Double>get.value;
+			}
+		}
+		
+		return name;
 	}
 
 	/*
