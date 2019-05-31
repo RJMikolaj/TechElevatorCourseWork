@@ -1,6 +1,7 @@
 package com.techelevator.farm;
 
-public class Chicken extends FarmAnimal {
+public class Chicken extends FarmAnimal implements Sellable, Singable {
+	
 	
 	public Chicken() {
 		super("Chicken", "cluck!");
@@ -9,5 +10,10 @@ public class Chicken extends FarmAnimal {
 	public void layEgg() {
 		System.out.println("Chicken laid an egg!");
 	}
+	
+	@Override
+	public int getPrice() {
+		return 25; 
+		}
 
 }

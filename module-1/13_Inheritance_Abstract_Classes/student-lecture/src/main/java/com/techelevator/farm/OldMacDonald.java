@@ -1,9 +1,12 @@
 package com.techelevator.farm;
 
-public class OldMacDonald {
+public abstract class OldMacDonald {
 	public static void main(String[] args) {
 
-		FarmAnimal[] farmAnimals = new FarmAnimal[] { new Cow(), new Chicken() };
+		FarmAnimal[] farmAnimals = new FarmAnimal[] { new Cow(), new Chicken(), new Cat(true),
+				new Blobert()};
+		
+		farmAnimals[1].sleep();
 
 		for (FarmAnimal animal : farmAnimals) {
 			String name = animal.getName();
