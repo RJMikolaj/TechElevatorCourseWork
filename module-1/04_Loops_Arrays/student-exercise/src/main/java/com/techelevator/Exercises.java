@@ -23,7 +23,7 @@ public class Exercises {
 	 */
 	public boolean sameFirstLast(int[] nums) {
 		boolean result = true;
-		if ((nums[nums.length] >= 1) && (nums[0] == nums[nums.length-1])) {
+		if ((nums[nums.length] >= 1) && (nums[0] == nums[nums.length - 1])) {
 			result = true;
 		}
 		return result;
@@ -96,18 +96,20 @@ public class Exercises {
 	 * maxEnd3([11, 5, 9]) → [11, 11, 11] maxEnd3([2, 11, 3]) → [3, 3, 3]
 	 */
 	public int[] maxEnd3(int[] nums) {
-		int firstElement = nums[0];
-		int lastElement = nums[nums.length -1];
-		
-		if (firstElement > lastElement) {
-			return public static void fill (firstElement);
-		}
-		
-		if (lastElement > firstElement) {
-			return firstElement; 
+		int[] result = null;
+		for (int i = 0; i < nums.length; i++) {
+			// int i = 0 is where it begins, i < nums.length is the length of the array aka
+			// where it stops, and i ++ means it goes through every time
+			if (nums[0] > nums[nums.length - 1]) {
+				nums[i] = nums[0];
+			} else if (nums[nums.length - 1] > nums[0]) {
+				nums[i] = nums[nums.length - 1];
+			}
+
 		}
 
-		return new int[] {};
+		return nums;
+
 	}
 
 	/*
@@ -120,7 +122,7 @@ public class Exercises {
 		int result = 0;
 		if (nums[nums.length] >= 2) {
 			result = (nums[0] + nums[1]);
-		}else if (nums[nums.length] < 2) {
+		} else if (nums[nums.length] < 2) {
 			result = nums[0];
 		}
 		return result;
@@ -134,10 +136,10 @@ public class Exercises {
 	 * [2, 4]
 	 */
 	public int[] middleWay(int[] a, int[] b) {
-		for (int i = 0 ; i < (a.length && b.length)  ; i++) {
-			
-		}
-		
+		//for (int i = 0; i < (a.length && b.length); i++) {
+
+		//}
+
 		return new int[] {};
 	}
 
@@ -148,9 +150,9 @@ public class Exercises {
 	 */
 	public int countEvens(int[] nums) {
 		int evens = 0;
-		for (int i = 0 ; i < nums.length ; i++) {
-			if (nums[i] % 2 == 0) 
-				evens++;	
+		for (int i = 0; i < nums.length; i++) {
+			if (nums[i] % 2 == 0)
+				evens++;
 		}
 		return evens;
 	}
@@ -172,10 +174,11 @@ public class Exercises {
 	 */
 	public boolean has22(int[] nums) {
 		boolean result = true;
-		for (int i = 0 ; i < nums.length-1 ; i++) {
-			if (nums[i] == 2 && nums[i+1] == 2)
-				return result; }
-				return false;
+		for (int i = 0; i < nums.length - 1; i++) {
+			if (nums[i] == 2 && nums[i + 1] == 2)
+				return result;
+		}
+		return false;
 	}
 
 	/*
@@ -185,11 +188,12 @@ public class Exercises {
 	 */
 	public boolean lucky13(int[] nums) {
 		boolean result = true;
-		for (int i = 0 ; i < nums.length ; i++) {
-			if(nums[i] == 1 || nums[i] == 3)
-				return false;  }
-				return result;
+		for (int i = 0; i < nums.length; i++) {
+			if (nums[i] == 1 || nums[i] == 3)
+				return false;
 		}
+		return result;
+	}
 
 	/*
 	 * 15. Given an array of ints, return true if the sum of all the 2's in the
@@ -199,12 +203,14 @@ public class Exercises {
 	public boolean sum28(int[] nums) {
 		boolean result = true;
 		int sum = 0;
-		for ( int i = 0 ; i < nums.length ; i++) {
-		if (nums[i] == 2)
-			sum += 2;
+		for (int i = 0; i < nums.length; i++) {
+			if (nums[i] == 2)
+				sum += 2;
 		}
-			{ if (sum == 8);
-		return (sum == 8); 
+		{
+			if (sum == 8)
+				;
+			return (sum == 8);
 		}
 	}
 
