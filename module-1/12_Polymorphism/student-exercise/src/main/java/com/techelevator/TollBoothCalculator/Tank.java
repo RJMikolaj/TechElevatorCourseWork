@@ -17,4 +17,10 @@ public class Tank implements Vehicle {
 		return tankToll;
 	}
 
+	@Override
+	public Object addName() {
+		// TODO Auto-generated method stub
+		return "Tank";
+	}
+
 }

@@ -12,11 +12,11 @@ public class PostageCalculator {
 
 	public static void main(String[] args) {
 		
-		PostalServiceFirstClass postalService1 = new PostalServiceFirstClass(1, "First Class");
-		PostalServiceSecondClass postalService2 = new PostalServiceSecondClass(2, "Second Class");
-		PostalServiceThirdClass postalService3 = new PostalServiceThirdClass(2, "Third Class");
-		FexEd fexEd1 = new FexEd(2.00, "Fex Ed");
-		SPU spu1 = new SPU(8.00, "SPU");
+		PostalServiceFirstClass postalService1 = new PostalServiceFirstClass(0.0, "First Class");
+		PostalServiceSecondClass postalService2 = new PostalServiceSecondClass(0.0, "Second Class");
+		PostalServiceThirdClass postalService3 = new PostalServiceThirdClass(0.0, "Third Class");
+		FexEd fexEd1 = new FexEd(0.0, "Fex Ed");
+		SPU spu1 = new SPU(0.0, "SPU");
 		
 		List <DeliveryDriver> deliveryMethod = new ArrayList<DeliveryDriver>();
 		
@@ -33,7 +33,7 @@ public class PostageCalculator {
 		
 		String weightInput = userInput.nextLine();
 		
-		System.out.printf("Please Enter P for Pounds or O for Ounces: ");
+		System.out.println("Please Enter P for Pounds or O for Ounces: ");
 		
 		String poundsOrOuncesInput = userInput.nextLine();
 		
@@ -45,9 +45,12 @@ public class PostageCalculator {
 		
 		for (DeliveryDriver delivery : deliveryMethod) {
 		System.out.println();
-		int randomNum = (int) (Math.random() * (9.9999));
-		System.out.printf("%-25s %-25s", delivery, randomNum, ((PostalServiceFirstClass) delivery).calculateRate(randomNum));
+		int randomNum = (int) (Math.random() * ((999-1) + 1) + 1);
+		System.out.printf("%-25s %-25s", delivery.addName(), randomNum, ((PostalServiceFirstClass) delivery).calculateRate(randomNum));
+		System.out.printf("%-25s %-25s", delivery.addName(), randomNum, ((PostalServiceSecondClass) delivery).calculateRate(randomNum));
 		System.out.println();
+		
+			
 		
 		
 	

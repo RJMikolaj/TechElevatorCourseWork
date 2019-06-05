@@ -36,6 +36,12 @@ public class PostalServiceFirstClass implements DeliveryDriver {
 			else if (ounces >= 144) {
 			perMileCost = distance * .500; }
 			return perMileCost; }
+
+	@Override
+	public Object addName() {
+		// TODO Auto-generated method stub
+		return "Postal Service First Class";
+	}
 				
 				
 		

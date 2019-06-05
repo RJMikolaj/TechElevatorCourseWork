@@ -32,4 +32,10 @@ public class Car implements Vehicle {
 		return carToll;
 	}
 
+	@Override
+	public Object addName() {
+		// TODO Auto-generated method stub
+		return "Car";
+	}
+
 }

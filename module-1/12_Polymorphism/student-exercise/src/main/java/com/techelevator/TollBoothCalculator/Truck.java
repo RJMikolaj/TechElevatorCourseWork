@@ -19,6 +19,7 @@ public class Truck implements Vehicle {
 
 	@Override
 	public double calculateToll(int distance) {
+	
 		double truckToll = 0;
 		if (numberOfAxles == 4) {
 			truckToll = distance * .040;
@@ -29,6 +30,12 @@ public class Truck implements Vehicle {
 		}
 
 		return truckToll;
+	}
+
+	@Override
+	public Object addName() {
+		// TODO Auto-generated method stub
+		return "Truck";
 	}
 
 }

@@ -23,13 +23,14 @@ public class TollCalculator {
 		vehicleToll.add(truckWithSixAxles);
 		vehicleToll.add(truckWithEightOrMoreAxles);
 		vehicleToll.add(justATankNoBigDeal);
+	
 
-		System.out.printf("%-25s %-25s %-15s", "Vehicle", "Distance Traveled", "Toll $");
+		System.out.printf("%-25s %-25s %-25s", "Vehicle", "Miles Traveled", "Toll $");
 
 		for (Vehicle vehiclePayingTolls : vehicleToll) {
 			System.out.println();
-			int randomNum = (int) (Math.random() * ((80 - 20) + 1) + 20);
-			System.out.printf("%-25s %-25s %-15s", vehiclePayingTolls, randomNum, vehiclePayingTolls.calculateToll(randomNum));
+			int randomNum = (int) (Math.random() * ((999-1) + 1) + 1);
+			System.out.printf("%-25s %-25s %-25s", vehiclePayingTolls.addName(), randomNum, vehiclePayingTolls.calculateToll(randomNum));
 			System.out.println();
 		}
 

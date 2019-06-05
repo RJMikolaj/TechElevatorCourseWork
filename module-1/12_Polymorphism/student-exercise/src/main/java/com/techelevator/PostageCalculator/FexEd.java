@@ -68,6 +68,13 @@ public class FexEd implements DeliveryDriver {
 	public double rateOver48 = (fexEdRate + 3.00);
 	
 	public double bigAndFar = (fexEdRate + 8.00);
+
+
+	@Override
+	public Object addName() {
+		// TODO Auto-generated method stub
+		return "FexEd";
+	}
 		
 	
 

@@ -36,4 +36,10 @@ public class PostalServiceThirdClass implements DeliveryDriver {
 			perMileCost = distance * 0.0170; }
 			return perMileCost; }
 
+	@Override
+	public Object addName() {
+		// TODO Auto-generated method stub
+		return "Postal Service Third Class";
+	}
+
 }

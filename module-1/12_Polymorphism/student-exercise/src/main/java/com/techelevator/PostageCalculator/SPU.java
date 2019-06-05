@@ -39,6 +39,14 @@ public class SPU implements DeliveryDriver {
 		
 			
 		}
+
+
+
+	@Override
+	public Object addName() {
+		
+		return "SPU";
+	}
 	
 	
 	
