@@ -13,5 +13,14 @@ import java.util.Map;
 import org.junit.Test;
 
 public class SameFirstLastTest {
+	
+	public void sameFirstLastTest() {
+		SameFirstLast array = new SameFirstLast();
+		assertFalse(array.isItTheSame(new int[] {1, 2, 3}));
+		assertTrue(array.isItTheSame(new int[] {1, 2, 3, 1}));
+		assertTrue(array.isItTheSame(new int[] {1, 2, 1}));
+		assertTrue(array.isItTheSame(new int[] {1}));
+		assertFalse(array.isItTheSame(new int[] {}));
+	}
 
 }

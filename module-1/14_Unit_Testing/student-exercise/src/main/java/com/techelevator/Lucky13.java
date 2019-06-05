@@ -2,7 +2,9 @@ package com.techelevator;
 
 public class Lucky13 {
 	
-    /*
+    public boolean getLucky;
+
+	/*
      Given an array of ints, return true if the array contains no 1's and no 3's.
      GetLucky([0, 2, 4]) → true
      GetLucky([1, 2, 3]) → false
@@ -16,5 +18,5 @@ public class Lucky13 {
         }
         return true;
     }
-
 }
+

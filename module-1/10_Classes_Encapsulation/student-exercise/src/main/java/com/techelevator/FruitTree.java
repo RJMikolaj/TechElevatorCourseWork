@@ -4,30 +4,31 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class FruitTree {
-	
-	public String typeOfFruit;
-	public int startingPiecesOfFruit;
-	
-	public String getTypeOfFruit(String typeOfFruit) {
-		return typeOfFruit;
-		
-	}
-	
-	
-	public FruitTree(String typeOfFruit, int startingPiecesOfFruit) {
-		
-		Map<String, Integer> getTypeOfFruit = new HashMap<String, Integer>();
-		getTypeOfFruit.put("Banana", 5);
-		getTypeOfFruit.put("Apple", 10);
-		
 
-		
-	}
-	
-	public boolean pickFruit(int numberOfPiecesToRemove) {
-		return true;
-	}
-	
-	
+	private String typeOfFruit;
+    private int piecesOfFruitLeft;
+
+    public FruitTree(String typeOfFruit, int startingPiecesOfFruit) {
+        this.piecesOfFruitLeft = startingPiecesOfFruit;
+        this.typeOfFruit = typeOfFruit;
+    }
+
+    public String getTypeOfFruit() {
+        return typeOfFruit;
+    }
+    
+    public int getPiecesOfFruitLeft() {
+        return piecesOfFruitLeft;
+    }
+
+    public boolean pickFruit(int numberOfPiecesToRemove) {
+        if (piecesOfFruitLeft-numberOfPiecesToRemove >= 0) {
+            piecesOfFruitLeft -= numberOfPiecesToRemove;
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
 
 }

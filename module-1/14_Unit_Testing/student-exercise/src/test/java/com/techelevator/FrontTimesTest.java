@@ -10,8 +10,20 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.naming.spi.DirStateFactory.Result;
+
+import org.junit.Assert;
 import org.junit.Test;
 
 public class FrontTimesTest {
+	
+	@Test
+	public void testGenerateStringSuccess() {
+		FrontTimes solution = new FrontTimes();
+		String str;
+		String result;
+		
+		
+	}
 
 }
