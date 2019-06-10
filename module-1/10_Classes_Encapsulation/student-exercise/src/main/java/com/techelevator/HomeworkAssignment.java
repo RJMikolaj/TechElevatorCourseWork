@@ -2,27 +2,30 @@ package com.techelevator;
 
 public class HomeworkAssignment {
 
-	private int totalMarks;
+	private int totalMarks = 0;
 	private int possibleMarks = 100;
 	private String submitterName;
-	
-	public HomeworkAssignment (int possibleMarks) {
+	private String letterGrade;
+
+	public HomeworkAssignment(int possibleMarks) {
+		this.possibleMarks = possibleMarks;
 	}
 
 	public String letterGrade() {
-		if (possibleMarks / totalMarks >= (0.90)) {
-			return "A";
-		} else if (possibleMarks / totalMarks >= (0.80)) {
-			return "B";
-		} else if (possibleMarks / totalMarks > (0.69) && possibleMarks / totalMarks < (0.80)) {
-			return "C";
-		} else if (possibleMarks / totalMarks > (0.59) && possibleMarks / totalMarks < (0.70)) {
-			return "D";
-		} else if (possibleMarks / totalMarks < 0.60) {
-			return "F";
+		String result = "";
+		if (possibleMarks / totalMarks >= (0.9)) {
+			result = "A";
+		} else if (possibleMarks / totalMarks >= (0.8)) {
+			result = "B";
+		} else if (possibleMarks / totalMarks >= (0.7)) {
+			result = "C";
+		} else if (possibleMarks / totalMarks >= (0.6)) {
+			result = "D";
+		} else if (possibleMarks / totalMarks < 0.6) {
+			result = "F";
 
 		}
-		return letterGrade();
+		return result;
 
 	}
 
@@ -47,7 +50,22 @@ public class HomeworkAssignment {
 	}
 
 	public String getLetterGrade() {
-		return letterGrade();
+		String result = "";
+		if (possibleMarks / totalMarks >= (0.90)) {
+			result = "A";
+		} else if (((possibleMarks / totalMarks) >= (0.79)) && ((possibleMarks / totalMarks) < (0.90))) {
+			result = "B";
+		} else if (possibleMarks / totalMarks > (0.69) && possibleMarks / totalMarks < (0.80)) {
+			result = "C";
+		} else if (possibleMarks / totalMarks > (0.59) && possibleMarks / totalMarks < (0.70)) {
+			result = "D";
+		} else if (possibleMarks / totalMarks < 0.60) {
+			result = "F";
+
+		}
+		letterGrade = result;
+		return letterGrade;
+
 	}
 
 }

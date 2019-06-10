@@ -22,11 +22,10 @@ public class Exercises {
 	 * false sameFirstLast([1, 2, 3, 1]) → true sameFirstLast([1, 2, 1]) → true
 	 */
 	public boolean sameFirstLast(int[] nums) {
-		boolean result = true;
 		if ((nums[nums.length] >= 1) && (nums[0] == nums[nums.length - 1])) {
-			result = true;
+			return true;
 		}
-		return result;
+		return false;
 	}
 
 	/*
@@ -201,7 +200,6 @@ public class Exercises {
 	 * 2]) → false sum28([1, 2, 3, 4]) → false
 	 */
 	public boolean sum28(int[] nums) {
-		boolean result = true;
 		int sum = 0;
 		for (int i = 0; i < nums.length; i++) {
 			if (nums[i] == 2)
