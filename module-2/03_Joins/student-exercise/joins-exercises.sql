@@ -10,12 +10,28 @@ WHERE actor.first_name = 'NICK' AND actor.last_name = 'STALLONE';
 
 -- 2. All of the films that Rita Reynolds has appeared in
 -- (20 rows)
+SELECT film.title
+FROM actor
+JOIN film_actor ON actor.actor_id = film_actor.actor_id
+JOIN film ON film_actor.film_id = film.film_id
+WHERE actor.first_name = 'RITA' AND actor.last_name = 'REYNOLDS';
 
 -- 3. All of the films that Judy Dean or River Dean have appeared in
 -- (46 rows)
+SELECT film.title
+FROM actor
+JOIN film_actor ON actor.actor_id = film_actor.actor_id
+JOIN film ON film_actor.film_id = film.film_id
+WHERE actor.first_name = 'JUDY' OR actor.first_name = 'RIVER'
+AND actor.last_name = 'DEAN' 
+
 
 -- 4. All of the the ‘Documentary’ films
 -- (68 rows)
+SELECT category.id
+FROM category
+JOIN film_category ON film_category.category_id = category.name
+WHERE category.category_id = '6'
 
 -- 5. All of the ‘Comedy’ films
 -- (58 rows)
