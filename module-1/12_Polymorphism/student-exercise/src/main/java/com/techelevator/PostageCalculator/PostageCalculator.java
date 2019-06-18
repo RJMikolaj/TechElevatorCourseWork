@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 import java.util.Scanner;
 
+import com.techelevator.Currency;
 import com.techelevator.TollBoothCalculator.Vehicle;
 
 public class PostageCalculator {
@@ -26,30 +27,37 @@ public class PostageCalculator {
 		deliveryMethod.add(fexEd1);
 		deliveryMethod.add(spu1);
 		
+		Scanner scan = new Scanner(System.in);
+		while (true) {
 		
 		Scanner userInput = new Scanner(System.in);
-		
 		System.out.printf("Please Enter the Weight of the Package: ");
 		
-		String weightInput = userInput.nextLine();
+		int weightInput = userInput.nextInt(); 
 		
-		System.out.println("Please Enter P for Pounds or O for Ounces: ");
+		//if (userInput == > 0 ^ < 100000) {
+			
+		}
 		
-		String poundsOrOuncesInput = userInput.nextLine();
 		
-		System.out.printf("How far will it be traveling? ");
-		
-		String howFarInput = userInput.nextLine();
-		
-		System.out.printf("%-25s %-25s", "Delivery Method", "Cost");
-		
-		for (DeliveryDriver delivery : deliveryMethod) {
-		System.out.println();
-		int randomNum = (int) (Math.random() * ((999-1) + 1) + 1);
-		System.out.printf("%-25s %-25s", delivery.addName(), randomNum, ((PostalServiceFirstClass) delivery).calculateRate(randomNum));
-		System.out.printf("%-25s %-25s", delivery.addName(), randomNum, ((PostalServiceSecondClass) delivery).calculateRate(randomNum));
-		System.out.println();
-		
+//		String poundsOrOuncesInput = userInput.nextLine();
+//		
+//		System.out.println("Is this weight in (P) Pounds or (O) Ounces?: ");
+//		
+//		String poundsOrOuncesInput = userInput.nextLine();
+//		
+//		System.out.printf("How far will it be traveling? ");
+//		
+//		String howFarInput = userInput.nextLine();
+//		
+//		System.out.printf("%-25s %-25s", "Delivery Method", "Cost");
+//		
+//		for (DeliveryDriver delivery : deliveryMethod) {
+//		System.out.println();
+//		int randomNum = (int) (Math.random() * ((999-1) + 1) + 1);
+//		System.out.printf("%-25s %-25s", delivery.addName(), randomNum, ((PostalServiceFirstClass) delivery).calculateRate(randomNum));
+//		System.out.println();
+//		
 			
 		
 		
@@ -57,5 +65,4 @@ public class PostageCalculator {
 
 	}
 
-}
 }
