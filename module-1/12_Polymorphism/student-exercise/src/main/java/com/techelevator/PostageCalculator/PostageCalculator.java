@@ -35,29 +35,29 @@ public class PostageCalculator {
 		
 		int weightInput = userInput.nextInt(); 
 		
-		//if (userInput == > 0 ^ < 100000) {
+		if (userInput > 0 ^ userInput < 100000) {
+			for (String poundsOrOuncesInput = userInput.nextLine()) {
+				System.out.printf("Is this weight in (P) Pounds or (O) Ounces?: ");
+		}
+		}
 			
 		}
+
 		
+		String poundsOrOuncesInput = userInput.nextLine();
 		
-//		String poundsOrOuncesInput = userInput.nextLine();
-//		
-//		System.out.println("Is this weight in (P) Pounds or (O) Ounces?: ");
-//		
-//		String poundsOrOuncesInput = userInput.nextLine();
-//		
-//		System.out.printf("How far will it be traveling? ");
-//		
-//		String howFarInput = userInput.nextLine();
-//		
-//		System.out.printf("%-25s %-25s", "Delivery Method", "Cost");
-//		
-//		for (DeliveryDriver delivery : deliveryMethod) {
-//		System.out.println();
-//		int randomNum = (int) (Math.random() * ((999-1) + 1) + 1);
-//		System.out.printf("%-25s %-25s", delivery.addName(), randomNum, ((PostalServiceFirstClass) delivery).calculateRate(randomNum));
-//		System.out.println();
-//		
+		System.out.printf("How far will it be traveling? ");
+		
+		String howFarInput = userInput.nextLine();
+		
+		System.out.printf("%-25s %-25s", "Delivery Method", "Cost");
+		
+		for (DeliveryDriver delivery : deliveryMethod) {
+		System.out.println();
+		int randomNum = (int) (Math.random() * ((999-1) + 1) + 1);
+		System.out.printf("%-25s %-25s", delivery.addName(), randomNum, ((PostalServiceFirstClass) delivery).calculateRate(randomNum));
+		System.out.println();
+		
 			
 		
 		
@@ -65,4 +65,5 @@ public class PostageCalculator {
 
 	}
 
+}
 }
