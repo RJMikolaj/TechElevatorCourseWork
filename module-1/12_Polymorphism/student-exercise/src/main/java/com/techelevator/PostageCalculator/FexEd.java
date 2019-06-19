@@ -59,15 +59,15 @@ public class FexEd implements DeliveryDriver {
 	
 
 
-	String name;
+	private String name;
 	
-	public double fexEdRate = 20.00;
+	private double fexEdRate = 20.00;
 	
-	public double rateOver500 = (fexEdRate + 5.00);
+	private double rateOver500 = (fexEdRate + 5.00);
 	
-	public double rateOver48 = (fexEdRate + 3.00);
+	private double rateOver48 = (fexEdRate + 3.00);
 	
-	public double bigAndFar = (fexEdRate + 8.00);
+	private double bigAndFar = (fexEdRate + 8.00);
 
 
 	@Override

@@ -92,10 +92,10 @@ public class EmployeeTest {
     public void employeeFullNameTest() {
         Class klass = Employee.class;
 
-    	Constructor<Employee> constructor = SafeReflection.getConstructor(klass, Integer.TYPE, String.class, String.class, Double.TYPE);
+    	Constructor<Employee> constructor = SafeReflection.getConstructor(String.class, String.class);
     	assertTrue("You do not have the required constructor(int, String, String, double)", constructor != null);
     	try {
-    		Employee employee = constructor.newInstance(1, "Jane", "Smith", 100000.00);
+    		Employee employee = constructor.newInstance("Jane", "Smith");
 	        Method getFullName = SafeReflection.getMethod(klass, "getFullName");
 
 	        assertTrue("Expected FullName to return derived value of 'LastName, FirstName'", "Smith, Jane".equals((String)getFullName.invoke(employee)));

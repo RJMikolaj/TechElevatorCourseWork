@@ -3,22 +3,28 @@ package com.techelevator;
 public class Airplane {
 	
 	String planeNumber;
-	int bookedFirstCLassSeats;
+	int bookedFirstClassSeats;
 	int availableFirstClassSeats;
 	int totalFirstClassSeats;
 	int bookedCoachSeats;
 	int availableCoachSeats;
 	int totalCoachSeats;
+	
+	Airplane airplane = new Airplane(planeNumber, totalFirstClassSeats, totalCoachSeats);
 
-	public Airplane(int totalFirstClassSeats, int totalCoachSeats) {
-		planeNumber = "000001";
+	public Airplane(String planeNumber, int totalFirstClassSeats, int totalCoachSeats) {
 		bookedCoachSeats = 0;
 		this.totalFirstClassSeats = totalFirstClassSeats;
 		bookedCoachSeats = 0;
 		this.totalCoachSeats = totalCoachSeats;
 	}
 	
-	@Override
+	public String getPlaneNumber() {
+		return planeNumber;
+	}
+
+
+
 	public String toString() {
 		return "Plane Number: " + planeNumber + ", Available First Class Seats: " + availableFirstClassSeats() + ", Available Coach Seats: " + availableCoachSeats();
 	}
@@ -35,18 +41,16 @@ public class Airplane {
 		if (firstClass) {
 			if (availableFirstClassSeats() >= totalNumberOfSeats) {
 				bookedFirstClassSeats += totalNumberOfSeats;
-				System.out.println("Reservation for " + totalNumberOfSeats + " First Class seats completed!");
 				return true;
 			}
 		} else {
 			if (availableCoachSeats() >= totalNumberOfSeats) {
 				bookedCoachSeats += totalNumberOfSeats;
-				System.out.println("Reservation for " + totalNumberOfSeats + " Coach seats completed!");
 				return true;
 			}
 		}
 		
-		System.out.println("Your reservation could not be completed at this time. Please try again, or call our help line for assistance.");
+
 		return false;
 	}
 }

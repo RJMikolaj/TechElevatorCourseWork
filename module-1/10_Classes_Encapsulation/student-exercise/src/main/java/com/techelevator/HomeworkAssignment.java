@@ -10,24 +10,39 @@ public class HomeworkAssignment {
 	public HomeworkAssignment(int possibleMarks) {
 		this.possibleMarks = possibleMarks;
 	}
-
-	public String letterGrade() {
-		String result = "";
-		if (possibleMarks / totalMarks >= (0.9)) {
-			result = "A";
-		} else if (possibleMarks / totalMarks >= (0.8)) {
-			result = "B";
-		} else if (possibleMarks / totalMarks >= (0.7)) {
-			result = "C";
-		} else if (possibleMarks / totalMarks >= (0.6)) {
-			result = "D";
-		} else if (possibleMarks / totalMarks < 0.6) {
-			result = "F";
-
-		}
-		return result;
-
-	}
+	
+	   public String getLetterGrade() {
+	        double percentage = (double) totalMarks / possibleMarks;
+	        if (percentage >= 0.9) {
+	            return "A";
+	        } else if (percentage >= 0.8) {
+	            return "B";
+	        } else if (percentage >= 0.7) {
+	            return "C";
+	        } else if (percentage >= 0.6) {
+	            return "D";
+	        } else {
+	            return "F";
+	        }
+	    }
+	
+//	public String letterGrade() {
+//		String result = "";
+//		if (possibleMarks / totalMarks >= (0.9)) {
+//			result = "A";
+//		} else if (possibleMarks / totalMarks >= (0.8)) {
+//			result = "B";
+//		} else if (possibleMarks / totalMarks >= (0.7)) {
+//			result = "C";
+//		} else if (possibleMarks / totalMarks >= (0.6)) {
+//			result = "D";
+//		} else if (possibleMarks / totalMarks < 0.6) {
+//			result = "F";
+//
+//		}
+//		return result;
+//
+//	}
 
 	public int getTotalMarks() {
 		return totalMarks;
@@ -49,23 +64,5 @@ public class HomeworkAssignment {
 		return possibleMarks;
 	}
 
-	public String getLetterGrade() {
-		String result = "";
-		if (possibleMarks / totalMarks >= (0.90)) {
-			result = "A";
-		} else if (((possibleMarks / totalMarks) >= (0.79)) && ((possibleMarks / totalMarks) < (0.90))) {
-			result = "B";
-		} else if (possibleMarks / totalMarks > (0.69) && possibleMarks / totalMarks < (0.80)) {
-			result = "C";
-		} else if (possibleMarks / totalMarks > (0.59) && possibleMarks / totalMarks < (0.70)) {
-			result = "D";
-		} else if (possibleMarks / totalMarks < 0.60) {
-			result = "F";
-
-		}
-		letterGrade = result;
-		return letterGrade;
-
-	}
 
 }

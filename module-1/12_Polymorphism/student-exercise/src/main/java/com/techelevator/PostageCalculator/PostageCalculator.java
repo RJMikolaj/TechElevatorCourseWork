@@ -35,13 +35,13 @@ public class PostageCalculator {
 		
 		int weightInput = userInput.nextInt(); 
 		
-		if (userInput > 0 ^ userInput < 100000) {
-			for (String poundsOrOuncesInput = userInput.nextLine()) {
-				System.out.printf("Is this weight in (P) Pounds or (O) Ounces?: ");
+		// if (userInput > 0 ^ userInput < 100000) {
+		//	for (String poundsOrOuncesInput = userInput.nextLine()) {
+		//		System.out.printf("Is this weight in (P) Pounds or (O) Ounces?: ");
 		}
 		}
 			
-		}
+	//	}
 
 		
 		String poundsOrOuncesInput = userInput.nextLine();
