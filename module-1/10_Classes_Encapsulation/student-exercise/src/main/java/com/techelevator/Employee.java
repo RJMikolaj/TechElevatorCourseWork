@@ -2,30 +2,24 @@ package com.techelevator;
 
 public class Employee {
 
-	public int employeeId;
-	public String firstName;
-	public String lastName;
-	public String fullName = firstName + lastName;
-	public String department;
-	public double annualSalary;
-	public double salary;
-	public double percent;
-	public double raiseAmount = (annualSalary * 0.055);
+	private int employeeId;
+	private String firstName;
+	private String lastName;
+	private String department;
+	private double annualSalary;
 
-	public String getFullName(String firstName, String lastName) {
-		return fullName;
-	}
 
 	public Employee(int employeeId, String firstName, String lastName, double salary) {
 		this.employeeId = employeeId;
-		this.fullName = fullName;
-		this.salary = salary;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.annualSalary = salary;
 	}
 
-	public double raiseSalary(double percent) {
+	public void raiseSalary(double percent) {
 		// how can it want a void but also want a double??????
-		
-		return (annualSalary + raiseAmount);
+		double raiseAmount = (annualSalary * percent);
+		annualSalary += raiseAmount;
 	}
 
 	public String getLastName() {
@@ -56,7 +50,7 @@ public class Employee {
 		// ok so first name + last name isn't working as is or as a cocatinated statement, so in the test it also wants the
 		// employee id and salary and that still doesn't work????
 		
-		return employeeId + firstName + lastName + salary;
+		return lastName + ", " + firstName;
 	}
 
 	public double getAnnualSalary() {

@@ -1,56 +1,68 @@
 package com.techelevator;
 
+import javax.naming.spi.DirStateFactory.Result;
+import javax.swing.event.InternalFrameAdapter;
+import javax.swing.plaf.metal.MetalBorders.OptionDialogBorder;
+
 public class Airplane {
-	
+
 	String planeNumber;
 	int bookedFirstClassSeats;
-	int availableFirstClassSeats;
 	int totalFirstClassSeats;
 	int bookedCoachSeats;
-	int availableCoachSeats;
 	int totalCoachSeats;
-	
-	Airplane airplane = new Airplane(planeNumber, totalFirstClassSeats, totalCoachSeats);
 
 	public Airplane(String planeNumber, int totalFirstClassSeats, int totalCoachSeats) {
-		bookedCoachSeats = 0;
+		this.planeNumber = planeNumber;
 		this.totalFirstClassSeats = totalFirstClassSeats;
-		bookedCoachSeats = 0;
 		this.totalCoachSeats = totalCoachSeats;
 	}
-	
+
 	public String getPlaneNumber() {
 		return planeNumber;
 	}
 
-
-
-	public String toString() {
-		return "Plane Number: " + planeNumber + ", Available First Class Seats: " + availableFirstClassSeats() + ", Available Coach Seats: " + availableCoachSeats();
-	}
-	
-	public int availableFirstClassSeats() {
-		return totalFirstClassSeats - bookedFirstClassSeats;
-	}
-	
-	public int availableCoachSeats() {
-		return totalCoachSeats - bookedCoachSeats;
-	}
-	
-	public boolean reserveSeats(boolean firstClass, int totalNumberOfSeats) {
-		if (firstClass) {
-			if (availableFirstClassSeats() >= totalNumberOfSeats) {
-				bookedFirstClassSeats += totalNumberOfSeats;
-				return true;
+	public boolean reserveSeats(boolean forFirstClass, int totalNumberOfSeats) {
+		if (forFirstClass == true) {
+			if (totalNumberOfSeats > getAvailableFirstClassSeats()) {
+				return false;
 			}
+			bookedFirstClassSeats += totalNumberOfSeats;
+
 		} else {
-			if (availableCoachSeats() >= totalNumberOfSeats) {
-				bookedCoachSeats += totalNumberOfSeats;
-				return true;
+			if (totalNumberOfSeats > getAvailableCoachSeats()) {
+				return false;
 			}
+			bookedCoachSeats += totalNumberOfSeats;
 		}
-		
+		return true;
 
-		return false;
 	}
+
+	public int getBookedFirstClassSeats() {
+		return bookedFirstClassSeats;
+	}
+
+	public int getBookedCoachSeats() {
+		return bookedCoachSeats;
+	}
+
+	public int getAvailableFirstClassSeats() {
+		int availableFirstClassSeats = (totalFirstClassSeats - bookedFirstClassSeats);
+		return availableFirstClassSeats;
+	}
+
+	public int getTotalFirstClassSeats() {
+		return totalFirstClassSeats;
+	}
+
+	public int getAvailableCoachSeats() {
+		int availableCoachSeats = (totalCoachSeats - bookedCoachSeats);
+		return availableCoachSeats;
+	}
+
+	public int getTotalCoachSeats() {
+		return totalCoachSeats;
+	}
+
 }
