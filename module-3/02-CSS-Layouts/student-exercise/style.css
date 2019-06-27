@@ -1,14 +1,121 @@
 :root {
     --blue: #00adee;
     --grey: #505355;
+    background-color: rgba(192, 192, 192, 0.1);
 }
-  
+
 * {
     font-family: Tahoma, Verdana, Segoe, sans-serif;
     box-sizing: border-box;
+
 }
 
 html {
+    color: var(--grey);
     font-size: 16px;
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr 2fr 1fr;
+    grid-template-areas:
+    ". head head . .  "
+    "headline . . . ."
+    "header header header . ."
+    "main main . . . "
+    "footer footer . . . "
+    grid-gap: 10px 20px;
+    margin-left: 20px;
 }
 
+body {
+  grid-area: body;
+}
+
+main #headline {
+  grid-area: main;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+
+}
+
+main img {
+  float: right;
+    border-radius: 50%;
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+main #student-quote {
+  letter-spacing: .1em;
+  grid-area: main;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+main #student-contact {
+  float: right;
+  grid-area: main;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+
+}
+
+main #headline {
+  grid-area: main;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+main #student-profile {
+  grid-area: main;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  margin-left: 10px;
+  margin-right: 10px;
+
+}
+
+
+div #experience {
+  grid-area: main;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+i {
+    color: var(--blue);
+}
+
+h3 {
+  color: var(--blue);
+}
+
+
+
+p {
+  font-size: 10pt;
+}
+
+header img {
+  object-fit: cover;
+  width: 300px;
+}
+
+
+
+}

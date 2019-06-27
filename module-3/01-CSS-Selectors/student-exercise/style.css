@@ -4,14 +4,99 @@
     --blue: #00adee;
     --light-blue: rgba(0, 173, 238, 0.4);
     --green: #8cc36f;
-    --light-green: rgba(170, 239, 135, 0.8);  
+    --light-green: rgba(170, 239, 135, 0.8);
     --bg-color: rgba(192, 192, 192, 0.1);
     --subheading: rgba(0, 0, 0, 0.6);
   }
-  
+
   * {
     box-sizing: border-box;
-    font-family: Tahoma, Verdana, Segoe, sans-serif;
+    font-family: "Roboto-Slab", Tahoma, Verdana, Segoe, sans-serif;
   }
-  
-  
+
+  body {
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr 2fr 1fr;
+    grid-template-areas:
+    ". body body . ."
+    ". main main main main ."
+    ". fall-festival fall-festival store store .";
+    grid-gap: 10px 20px;
+  }
+
+  header {
+    grid-area: header;
+  }
+
+  nav {
+    grid-area: nav;
+  }
+
+  main {
+    grid-area: main;
+  }
+}
+
+body > main > header > img {
+  float: top;
+  float: left;
+  top: 0px;
+  padding-left: 150px;
+  height: 75px;
+}
+
+nav ul {
+  float: left;
+  padding-top: 100px;
+  list-style: none;
+  text-align: center;
+  width: 200px;
+}
+
+aside {
+  position: fixed;
+  float: left;
+  padding-top: 0px;
+  padding-left: 0px;
+  text-align: center;
+  display: block;
+  width: 200px;
+}
+
+main header img {
+  position: relative;
+  padding-left: 215px;
+  ali
+}
+
+aside > img {
+  height: 120px;
+}
+
+
+section {
+  position: relative;
+}
+
+section > div > h2 > i {
+  font-size: 20px;
+  font-color: rgba(0, 173, 238, 0.4);
+  font-weight: bold;
+}
+
+section > div > h2 > p {
+  font-size: 12px
+  font-color: black;
+
+}
+
+footer #logos {
+  with: 25%;
+}
+
+li {
+  margin-left: 20px;
+  vertical-align: left;
+  font-size: 20px;
+  font-color: #00ADEE;
+}
