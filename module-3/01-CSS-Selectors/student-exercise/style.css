@@ -11,39 +11,73 @@
 
   * {
     box-sizing: border-box;
-    font-family: "Roboto-Slab", Tahoma, Verdana, Segoe, sans-serif;
+    font-family: "Roboto-Slab", Tahoma, Verdana, sans-serif;
   }
 
-  body {
-    display: grid;
-    grid-template-columns: 1fr 2fr 2fr 2fr 1fr;
-    grid-template-areas:
-    ". body body . ."
-    ". main main main main ."
-    ". fall-festival fall-festival store store .";
-    grid-gap: 10px 20px;
-  }
+body > aside {
+  border-right: 200px blue;
+  position: fixed;
+}
 
-  header {
-    grid-area: header;
-  }
+body > aside > img {
+  height: 140px;
+  align-items: baseline;
+  position:fixed;
 
-  nav {
-    grid-area: nav;
-  }
+}
 
-  main {
-    grid-area: main;
-  }
+body > main > header > img {
+  height: 140px;
+  align-items: baseline;
+}
+
+body > main > img {
+  max-width: 2400px;
+  height: auto;
+  padding-top: 100px;
+  padding-left: 100px;
+}
+
+body > aside > nav > ul {
+  width: 500px;
+  text-align: center;
+  margin-right: 20px;
+  font-size: 50px;
+  text-decoration-color: var(--blue);
+  font-family: "Roboto-Slab", Tahoma, Verdana, sans-serif;
+  font-weight: bold;
+  line-height: 100px;
+  position: relative;
+
+}
+
+body aside ul {
+  text-align: center;
+  list-style: none;
+}
+
+main > img {
+  position: relative;
+
+  float: left;
 }
 
 body > main > header > img {
   float: top;
   float: left;
   top: 0px;
+  margin-right: 20px;
   padding-left: 150px;
   height: 75px;
 }
+
+main > section {
+  top: 200px;
+    padding-top: 50px;
+  display: inline-flex;
+  word-wrap: break-word;
+}
+
 
 nav ul {
   float: left;
@@ -56,47 +90,35 @@ nav ul {
 aside {
   position: fixed;
   float: left;
-  padding-top: 0px;
-  padding-left: 0px;
+  padding-top: 50px;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-bottom: 50px;
   text-align: center;
   display: block;
   width: 200px;
 }
 
-main header img {
-  position: relative;
-  padding-left: 215px;
-  ali
-}
-
-aside > img {
-  height: 120px;
-}
-
-
-section {
-  position: relative;
-}
-
-section > div > h2 > i {
-  font-size: 20px;
-  font-color: rgba(0, 173, 238, 0.4);
+h2 {
+  font-size: 50px;
   font-weight: bold;
+  color: var(--green);
 }
 
-section > div > h2 > p {
-  font-size: 12px
-  font-color: black;
-
+h3 {
+  font-size: 0px;
 }
 
-footer #logos {
-  with: 25%;
+#social {
+  font-size: 0px;
 }
 
-li {
-  margin-left: 20px;
-  vertical-align: left;
-  font-size: 20px;
-  font-color: #00ADEE;
+body > main > footer > div > div > img  {
+  position: relative;
+  padding-top: 50px;
+  padding-left: 20px;
+  padding-right: 20px;
+  float: left;
+  max-width: 0%;
+  height: auto;
 }

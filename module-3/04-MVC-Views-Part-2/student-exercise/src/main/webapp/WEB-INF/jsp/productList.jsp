@@ -30,6 +30,10 @@
 		<!-- Container for all of the Products -->
 		<!-- The list of products is available using the `products` variable -->
 		<div id="grid">
+		
+			<c:forEach var="product" items="$[products]">
+			${product.name}
+			</c:forEach>
 
 			<!-- 
 			The following HTML shows different examples of what HTML could be rendered based on different rules. 
