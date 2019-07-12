@@ -13,13 +13,19 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class ActorSearchController {
+	
+	
+	// build a form
+	// request mapping reeuqestObject
+	// exactly what we did with cityobject just with actor
 
 	@Autowired
 	private ActorDao actorDao;
 
 	/* What request mapping do we want here */
+	@RequestMapping("/actorSearch")
 	public String showSearchActorForm() {
-		return null;
+		return "actorList";
 	}
 
 	/* What about here? */

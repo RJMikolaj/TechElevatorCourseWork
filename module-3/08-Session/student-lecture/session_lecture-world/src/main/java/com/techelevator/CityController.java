@@ -23,11 +23,13 @@ import com.techelevator.dao.model.User;
  */
 
 @Controller
+@SessionAttributes({"user", "bgClass"})
 public class CityController {
 
 	@Autowired
 	private CityDAO cityDao;
 	
+
 	
 	@RequestMapping(path="/", method=RequestMethod.GET)
 	public String showCityList(ModelMap map) {
