@@ -3,7 +3,7 @@
 <c:set var="pageTitle" value="Home Page"/>
 <%@include file="common/header.jspf" %>
 
-<h2>Index</h2>
+<h2>Home Page</h2>
 
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam a odio lobortis, 
 rhoncus mauris dignissim, tristique lectus. Morbi risus ex, pulvinar tincidunt lacus placerat, 
