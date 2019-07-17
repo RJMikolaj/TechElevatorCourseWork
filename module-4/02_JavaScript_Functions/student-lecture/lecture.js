@@ -1,3 +1,5 @@
+greeting(firstName);
+
 /**
  * All named functions will have the function keyword and
  * a name followed by parentheses.
@@ -19,12 +21,15 @@ function printToConsole(value) {
 }
 
 /**
- * Write a function called multiplyTogether that multiplies two numbers together. But 
+ * Write a function called multiplyTogether that multiplies two numbers together. But
  * what happens if we don't pass a value in? What happens if the value is not a number?
  *
  * @param {number} firstParameter the first parameter to multiply
  * @param {number} secondParameter the second parameter to multiply
  */
+ function multiplyTogether(firstParameter, secondParameter) {
+   return firstParameter * secondParameter;
+ }
 
 /**
  * This version makes sure that no parameters are ever missing. If
@@ -36,6 +41,9 @@ function printToConsole(value) {
  * @param {number} [firstParameter=0] the first parameter to multiply
  * @param {number} [secondParameter=0] the second parameter to multiply
  */
+ function multiplyNoUndefined(firstParameter = 0, secondParameter = 0) {
+   return firstParameter * secondParameter;
+ }
 
 /**
  * Scope is defined as where a variable is available to be used.
@@ -46,7 +54,8 @@ function printToConsole(value) {
  */
 function scopeTest() {
   // This variable will always be in scope in this function
-  let inScopeInScopeTest = true;
+  var inScopeInScopeTest = true;
+  var inScopeInScopeTest = "Hello";
 
   {
     // this variable lives inside this block and doesn't
@@ -59,7 +68,17 @@ function scopeTest() {
     console.log("This won't print!");
   }
 }
+/**
+Take the details of a person and create an English readable sentence that uses
+that information to describe them. Quirs are joined together with the separator,
+or by default.
 
+@param {string} name the name of the person being described
+@param {number} age the age of the person being described
+@param {string[]} [listOfQuirks] a list of funny quirks that will be listed
+@param {string} [separator=','] the string to separate the quirks by
+@returns {string} the full descriptive string
+*/
 function createSentenceFromUser(name, age, listOfQuirks = [], separator = ', ') {
   let description = `${name} is currently ${age} years old. Their quirks are: `;
   return description + listOfQuirks.join(separator);
@@ -73,7 +92,9 @@ function createSentenceFromUser(name, age, listOfQuirks = [], separator = ', ') 
  * @returns {number} sum of all the numbers
  */
 function sumAllNumbers(numbersToSum) {
-  return numbersToSum.reduce();
+  return numbersToSum.reduce(sum, val) => {
+    return sum + val;
+  });
 }
 
 /**
@@ -84,4 +105,8 @@ function sumAllNumbers(numbersToSum) {
  * @returns {number[]} a new array with only those numbers that are
  *   multiples of 3
  */
-function allDivisibleByThree(numbersToFilter) {}
+function allDivisibleByThree(numbersToFilter) {
+  return numbersTofiler.filter( (num) => {
+    return % 3 === 0;
+  });
+}
