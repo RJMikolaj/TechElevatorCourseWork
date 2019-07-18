@@ -91,7 +91,9 @@
 									</div>
 								</c:otherwise>
 							</c:choose>
-
+							<c:if test="${product.remainingStock <= 5}">
+							<p class="product-alert">${product.remainingStock} left!</p>
+							</c:if>
 							<p class="price">${product.price}</p>
 						</div>
 					</div>

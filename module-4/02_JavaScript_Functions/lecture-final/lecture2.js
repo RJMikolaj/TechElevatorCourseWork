@@ -141,14 +141,3 @@ console.table( reduceAndAddLetterA(arr, (num) => { return num % 2 ===0;}) );
 console.table( reduceAndAddLetterA(arr, (num) => { return num % 2 !==0;}) );
 
 console.table( reduceAndAddLetterA(stringArr, (name) => { return name.length > 6;}) );
-
-
-
-
-
-
-
-
-
-
-

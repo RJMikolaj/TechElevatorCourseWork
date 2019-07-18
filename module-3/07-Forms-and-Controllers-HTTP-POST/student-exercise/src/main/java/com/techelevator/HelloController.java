@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.techelevator.model.JdbcReviewDao;
 import com.techelevator.model.Review;
 import com.techelevator.model.ReviewDao;
 
@@ -30,9 +31,11 @@ public class HelloController {
 
 	@Autowired
 	ReviewDao reviewDao;
+	
 
 	@RequestMapping(path="/allReviews", method=RequestMethod.GET)
 	public String showAllReviews(ModelMap modelHolder) {
+		Review review = new Review();
 		List<Review> reviews= reviewDao.getAllReviews();
 		modelHolder.put("allReviews", reviews);
 		
