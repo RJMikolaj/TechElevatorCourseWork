@@ -5,4 +5,6 @@ import java.util.List;
 
 public interface ActorDao {
     public List<Actor> getMatchingActors(String search);
+
+	public List<Actor> getMatchingActors();
 }

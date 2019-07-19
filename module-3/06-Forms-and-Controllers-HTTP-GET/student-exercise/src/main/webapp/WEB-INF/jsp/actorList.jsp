@@ -3,24 +3,25 @@
 <c:set var="pageTitle" value="All Actors List"/>
 
 <%@include file="common/header.jspf"%>
-<html>
-	<head>
-		<title>Actor List</title>
-	</head>
-	<body>
-		<h1>Actor List</h1>
-		
-		<c:url var="citySearchUrl" value="/actorlist" />
-		
-		<form action="${actors}" method="GET">
-			<label for="countryCode">Country Code:</label>
-			<input type="text" name="countryCode" />
-			<input type="submit" value="Search" />
-		
-		</form>
-	</body>
 
-</html>
+<section>
+<c:forEach var="actor" items="${actors}">
+	<c:url var="dlink" value="/detail"
+
+
+
+
+
+
+
+
+
+
+
+
+
+</c:forEach>
+</section>
 
 
 
