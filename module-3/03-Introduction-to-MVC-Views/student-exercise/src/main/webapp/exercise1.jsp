@@ -1,6 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <!DOCTYPE html>
+<!-- fizzbuzz -->
 <html>
 	<head>
 		<title>Exercise 1 - FizzBuzz</title>
