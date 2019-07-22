@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <the-header></the-header>
     <header>Header</header>
     <aside class="sidebar-left">Left Sidebar</aside>
     <article>Article</article>
@@ -9,9 +10,13 @@
 </template>
 
 <script>
+import TheHeader from "@/components/TheHeader.vue";
+
 export default {
   name: "app",
-  components: {}
+  components: {
+    TheHeader
+  }
 };
 </script>
 

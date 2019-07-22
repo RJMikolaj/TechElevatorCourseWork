@@ -8,7 +8,8 @@
 <!-- Container for the Product -->
 <!-- The current product is available using the `product` variable -->
 <div id="product-detail">
-	<img src="<c:url value="/images/product-images/grey-sofa.jpg" />" />
+<c:forEach var="product" items="${products}">
+	<img src="<c:url value="/images/product-images/${product.imageName}" />" />
 	<div class="product-description">
 		<h3>Grey Sofa</h3>
 
@@ -31,6 +32,7 @@
 		<!-- OR if item is out of stock -->
 		<!--<button disabled>Sold Out</button>-->
 	</div>
+	</c:forEach>
 </div>
 
 <c:import url="/WEB-INF/jsp/common/footer.jsp" />
