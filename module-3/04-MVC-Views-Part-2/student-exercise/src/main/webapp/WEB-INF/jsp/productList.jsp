@@ -53,6 +53,11 @@
 							<c:when test="${product.remainingStock == 0}">
 								<span class="banner">Sold Out</span>
 							</c:when>
+							
+							<c:when test="${product.remainingStock <= 4}">
+							<span class="banner">Less than five remaining!</span>
+							</c:when>
+							
 						</c:choose>
 
 

@@ -19,20 +19,47 @@
 		 could be rendered based on different rules. For purposes
 		 of demonstration we've written it out so you can see it
 		 when you load the page up. -->
-
+		
 		<!-- Standard Product -->
 		<div class="tile  ">
+		<c:forEach var="product" items="${products}">
 			<!-- Link to the Detail page using the product id (e.g. products/detail?id=1) -->
 			<a class="product-image" href="#"> 
-				<img src="<c:url value="/images/product-images/grey-sofa.jpg" />" />
+				<img src="<c:url value="/images/product-images/${product.imageName}" />" />
+				
 			</a>
 			<div class="details">
-				<p class="name">
-					<a href="#">Grey Sofa</a>
-				</p>
+				<p class="name">${product.name}</p>
 
 				<!-- .filled will make the star solid -->
 				<div class="rating">
+				<c:choose>
+								<c:when
+									test="${product.averageRating > 4 && product.averageRating <=5}">
+									<div class="rating">
+										<span class="filled">&#9734;</span> <span class="filled">&#9734;</span>
+										<span class="filled">&#9734;</span> <span class="filled">&#9734;</span>
+										<span class="filled">&#9734;</span>
+
+									</div>
+								</c:when>
+
+								<c:when
+									test="${product.averageRating <= 4 && product.averageRating > 3}">
+									<div class="rating">
+										<span class="filled">&#9734;</span> <span class="filled">&#9734;</span>
+										<span class="filled">&#9734;</span> <span class="filled">&#9734;</span>
+										<span>&#9734;</span>
+
+									</div>
+								</c:when>
+								<c:otherwise>
+									<div class="rating">
+										<span>&#9734;</span> <span>&#9734;</span> <span>&#9734;</span>
+										<span>&#9734;</span> <span>&#9734;</span>
+									</div>
+								</c:otherwise>
+							</c:choose>
 					<span class="filled">&#9734;</span> 
 					<span>&#9734;</span> 
 					<span>&#9734;</span>
@@ -40,18 +67,25 @@
 					<span>&#9734;</span>
 				</div>
 
-				<p class="price">$939.00</p>
+				<p class="price">${product.price}</p>
 			</div>
+			</c:forEach>
 		</div>
 
 		<!-- Add the .top-seller class if the product is considered a Top Seller -->
 		<div class="tile top-seller ">
+		<c:choose>
+							<c:when test="${product.topSeller}">
+								<span class="banner top-seller">Top Seller!</span>
+							</c:when>
+							</c:choose>
 			<!-- Link to the Detail page using the product id (e.g. products/detail?id=1) -->
-			<a class="product-image" href="#"> 
-				<img src="<c:url value="/images/product-images/grey-sofa.jpg" />" />
-			</a>
+				<a class="product-image" href="#"> <img
+							src="<c:url value="/images/product-images/${product.imageName}" />" />
+						</a>
+			
 			<div class="details">
-				<p class="name">
+				<p class="name">${product.name}</p>
 					<a href="#">Grey Sofa</a>
 				</p>
 
