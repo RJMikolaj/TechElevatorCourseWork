@@ -40,8 +40,8 @@ function markCompleted() {
   const completed = document.addEventListener('click', function() {
     document.getElementById('.shopping-list ul').innerHTML = displayGroceries
   });
-
 }
+
 
 setPageTitle();
 

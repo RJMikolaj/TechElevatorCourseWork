@@ -24,19 +24,26 @@ public class JDBCActorDao implements ActorDao {
         this.jdbcTemplate = new JdbcTemplate(datasource);
     }
 
-    @Override
-    public List<Actor> getMatchingActors(String search) {
+	@Override
+	public List<Actor> getMatchingActors(String search) {
         List<Actor> matchingActors = new ArrayList<>();
         String actorSearchSql = "SELECT first_name, last_name FROM actor WHERE last_name ILIKE ? order by last_name";
         SqlRowSet results = jdbcTemplate.queryForRowSet(actorSearchSql, "%" + search + "%");
-        while (results.next()) {
+        while(results.next()) {
             matchingActors.add(mapRowToActor(results));
         }
         return matchingActors;
-    }
+	}
 
-    private Actor mapRowToActor(SqlRowSet results) {
-        return new Actor(results.getString("first_name"), results.getString("last_name"));
-    }
+	private Actor mapRowToActor(SqlRowSet results) {
+		return new Actor(results.getString("first_name"), results.getString("last_name"));
+	}
 
+	@Override
+	public List<Actor> getMatchingActors() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+    
 }
