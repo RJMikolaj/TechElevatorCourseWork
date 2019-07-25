@@ -25,7 +25,7 @@ public class JdbcReviewDao implements ReviewDao {
 		List<Review> allReviews = new ArrayList<>();
 		String sqlSelectAllReviews = "SELECT * FROM reviews";
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectAllReviews);
-		while (results.next()) {
+		while(results.next()) {
 			Review review = new Review();
 			review.setId(results.getLong("review_id"));
 			review.setUsername(results.getString("username"));
@@ -40,23 +40,9 @@ public class JdbcReviewDao implements ReviewDao {
 
 	@Override
 	public void save(Review review) {
-		Long id = getNextId();
-		String sqlInsertReview = "INSERT INTO reviews(review_id, username, rating, review_title, review_text, review_date) VALUES (?,?,?,?,?,?)";
-		jdbcTemplate.update(sqlInsertReview, id, review.getUsername(), review.getRating(), review.getTitle(),
-				review.getText(), review.getDateSubmitted());
+		String sqlInsertReview = "INSERT INTO reviews(review_id, username, rating, review_title, review_text, review_date) VALUES (?,?,?,?,?,?) RETURNING id";
+		long id = jdbcTemplate.queryForObject(sqlInsertReview, Long.class, review.getUsername(), review.getRating(), review.getTitle(), review.getText(), review.getDateSubmitted());
 		review.setId(id);
-	}
-
-	private Long getNextId() {
-		String sqlSelectNextId = "SELECT NEXTVAL('seq_review_id')";
-		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectNextId);
-		Long id = null;
-		if (results.next()) {
-			id = results.getLong(1);
-		} else {
-			throw new RuntimeException("Something strange happened, unable to select next forum post id from sequence");
-		}
-		return id;
 	}
 
 }

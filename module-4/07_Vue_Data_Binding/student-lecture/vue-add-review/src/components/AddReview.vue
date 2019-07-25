@@ -3,7 +3,7 @@
     <h1>Add New Review</h1>
     <div class="row">
       <div class="col-7">
-        <form>
+        <form v-on: submit="saveReview">
           <div class="form-group">
             <label for="title">Title</label>
             <input type="text" class="form-control" id="title" placeholder="Enter title" v-model="review.title">
@@ -15,7 +15,7 @@
           <div class="form-group">
             <label for="rating">Rating</label>
             <select class="form-control" id="rating" v-model="review.rating">
-              <option>1</option>
+              <option>1</option> 
               <option>2</option>
               <option>3</option>
               <option>4</option>
@@ -45,13 +45,22 @@
 export default {
   data() {
     return {
-      
-    }
+      review: {
+        title: "",
+        rating: "",
+        reviewer: "",
+        review: ""
+      }
+    };
   },
   methods: {
-    
+    saveReview() {
+      const json = JSON.stringify(this.review);
+      // send this data to an API
+      console.log(json);
+    }
   }
-}
+};
 </script>
 
 <style>
