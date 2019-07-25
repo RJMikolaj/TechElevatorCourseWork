@@ -11,91 +11,77 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.techelevator.validation.model.Login;
-
-import org.springframework.util.StringUtils;
+import com.techelevator.validation.model.Registration;
 
 @Controller
 public class UserController {
 	// GET: /
-	@RequestMapping(path = "/", method = RequestMethod.GET)
+	@RequestMapping(path="/", method=RequestMethod.GET)
 	public String getMainScreen() {
 		return "homePage";
 	}
 
-	@RequestMapping(path = "/login", method = RequestMethod.GET)
-	public String showLoginScreen(ModelMap modelHolder) {
-		if (!modelHolder.containsAttribute("login")) {
+	// Add the following Controller Actions
+
+	// GET: /register
+	// Return the empty registration view
+	
+	@RequestMapping(path="/register", method=RequestMethod.GET)
+	public String getRegistrationForm(ModelMap modelHolder) {
+		if( ! modelHolder.containsAttribute("registration")) {
+			modelHolder.put("registration", new Registration());
+		}
+		
+		return "registration";
+	}
+	
+	
+
+	// POST: /register
+	// Validate the model and redirect to confirmation (if successful) or return
+	// the
+	// registration view (if validation fails)
+	@RequestMapping(path="/register", method=RequestMethod.POST)
+	public String processRegistration(@Valid @ModelAttribute Registration regData, 
+			BindingResult result, RedirectAttributes flash) {
+		if(result.hasErrors()) {
+		flash.addFlashAttribute(BindingResult.MODEL_KEY_PREFIX + "registration", result);
+		flash.addFlashAttribute("registration", regData);
+			return"redirect:/register";
+		}
+		
+		flash.addFlashAttribute("message", "You are registered");
+		return "redirect:/";
+	}
+
+	// GET: /login
+	// Return the empty login view
+	
+	@RequestMapping(path="/login", method=RequestMethod.GET)
+	public String getLoginForm(ModelMap modelHolder) {
+		if( ! modelHolder.containsAttribute("login")) {
 			modelHolder.put("login", new Login());
 		}
 		return "login";
 	}
 
-	@RequestMapping(path = "/login", method = RequestMethod.POST)
-	public String processLoginScreen(@Valid @ModelAttribute Login login, BindingResult result,
+	// POST: /login
+	// Validate the model and redirect to login (if successful) or return the
+	// login view (if validation fails)
+	
+	@RequestMapping(path="/login", method=RequestMethod.POST)
+	public String processLogin(@Valid @ModelAttribute Login logData, BindingResult result, 
 			RedirectAttributes flash) {
-
-		flash.addFlashAttribute("login", login);
-
-		if (result.hasErrors()) {
+		if(result.hasErrors()) {
 			flash.addFlashAttribute(BindingResult.MODEL_KEY_PREFIX + "login", result);
-			return "redirect:/login";
+			flash.addFlashAttribute("login", logData);
+			return"redirect:/login";
 		}
-		return "redirect:/confirmation";
+		flash.addFlashAttribute("message", "You are Logged in");
+		return "redirect:/";
 	}
 
-	@RequestMapping(path = "/confirmation", method = RequestMethod.GET)
-	public String showConfirmationPage() {
-		return "confirmation";
-	}
-
-	@RequestMapping(path = "/register", method = RequestMethod.GET)
-	public String showRegistrationScreen(ModelMap modelHolder) {
-		if (!modelHolder.containsAttribute("registration")) {
-			modelHolder.put("registration", new Registration());
-		}
-		return "register";
-	}
-
-	@RequestMapping(path = "/register", method = RequestMethod.POST)
-	public String processRegistrationScreen(@Valid @ModelAttribute Registration registration, BindingResult result,
-			RedirectAttributes flash) {
-
-		flash.addFlashAttribute("registration", registration);
-
-		if (!StringUtils.pathEquals(registration.getConfirmEmail(), registration.getEmail())) {
-			result.reject("confirmEmail", "email.confirm.mustequal");
-			flash.addFlashAttribute(BindingResult.MODEL_KEY_PREFIX + "registration", result);
-			System.out.println("two emails not equal");
-			return "redirect:/register";
-		}
-
-		if (result.hasErrors()) {
-			flash.addFlashAttribute(BindingResult.MODEL_KEY_PREFIX + "registration", result);
-			return "redirect:/register";
-		}
-		return "redirect:/registrationConfirmation";
-	}
-
-	@RequestMapping(path = "/registrationConfirmation", method = RequestMethod.GET)
-	public String showRegistrationConfirmationPage() {
-		return "registrationConfirmation";
-	}
+	// GET: /confirmation
+	// Return the confirmation view
 }
 
-// GET: /register
-// Return the empty registration view
-
-// POST: /register
-// Validate the model and redirect to confirmation (if successful) or return
-// the
-// registration view (if validation fails)
-
-// GET: /login
-// Return the empty login view
-
-// POST: /login
-// Validate the model and redirect to login (if successful) or return the
-// login view (if validation fails)
-
-// GET: /confirmation
-// Return the confirmation view
