@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
+import ShoppingList from './components/ShoppingList.vue'
 
 Vue.config.productionTip = false
 
