@@ -6,3 +6,13 @@ Vue.config.productionTip = false
 new Vue({
   render: h => h(App),
 }).$mount('#app')
+
+export default{
+methods:{
+  changeStatus(id) {
+    const arrIndex = this.groceries.findIndex((item) => item.id == id);
+    this.groceries[arrIndex].completed = !this.groceries[arrIndex].completed;
+
+  }
+}
+}
