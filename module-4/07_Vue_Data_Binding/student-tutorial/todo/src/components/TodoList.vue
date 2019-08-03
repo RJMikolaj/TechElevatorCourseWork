@@ -1,12 +1,9 @@
 <template>
     <div class="todo-list">
         <h1>My Daily Routine</h1>
-        <ul>
-            <li>Wake Up</li>
-            <li>5 Minute Morning Movement</li>
-            <li>Meditate</li>
-            <li>Brush Teeth</li>
-            <li>Shower</li>
+        <ul> <li v-for="todo in todos" v-bind:key="todo">{{todo}}</li>
+todo hwere is arbitrary until we add key. v-for is just a for loop
+
         </ul>
     </div>
 </template>
@@ -15,7 +12,11 @@
 export default {
   data() {
     return {
-    
+      todos: [
+        'wake up',
+        'brush teeth'
+      ]
+
     }
   }
 }
@@ -60,7 +61,7 @@ li.todo-completed {
     text-decoration: line-through;
     color: darkgray;
 }
-i.far.fa-check-circle { 
+i.far.fa-check-circle {
     float:right;
     color: darkgray;
 }

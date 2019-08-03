@@ -1,7 +1,17 @@
 <template>
   <div class="shopping-list">
-    <h1>My Shopping List</h1>
+    <h1>RJ's Shopping List</h1>
     <ul>
+      <li class="completed">Almond Milk</li>
+      <li class="completed">Quinoa</li>
+      <li>Toaster Strudel</li>
+      <li>Doublemint Gum</li>
+      <li>Pluto Nash on VHS</li>
+      <li>Jasmine Rice</li>
+      <li class="completed">Gala Apples</li>
+      <li>Toaster Strudel</li>
+      <li>Spinach, maybe</li>
+
 
     </ul>
   </div>
@@ -10,8 +20,11 @@
 <script>
 export default {
 
-}
+
+  }
+
 </script>
+
 
 <style>
 .shopping-list {
