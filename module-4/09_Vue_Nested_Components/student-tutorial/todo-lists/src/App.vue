@@ -4,6 +4,9 @@
     <todo-list title="My Work Todo's" v-bind:todos="work"></todo-list>
     <todo-list title="My Personal Todo's" v-bind:todos="personal"></todo-list>
     <todo-list title="My Household Todo's" v-bind:todos="household"></todo-list>
+    <todo-search v-on:filter-tasks="handleSearch"></todo-search>
+
+
   </div>
 </template>
 
@@ -66,7 +69,7 @@ body {
   grid-gap: 20px;
 }
 
-.search { 
+.search {
   grid-column: 2 / 3;
   grid-row: 1;
 }
@@ -74,4 +77,3 @@ body {
   grid-row: 2;
 }
 </style>
-

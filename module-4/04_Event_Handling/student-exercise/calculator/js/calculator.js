@@ -32,7 +32,7 @@ function performOperation() {
 
 /**
  * Parses the display value into a number (float or int).
- * @param {String} num 
+ * @param {String} num
  */
 function parseNumber(num) {
   return num.includes('.') ? parseFloat(num) : parseInt(num);
@@ -50,7 +50,7 @@ function clickOperator() {
 
 /**
  * Captures a number click and updates the display value.
- * @param {Event} event 
+ * @param {Event} event
  */
 function clickNumber(event) {
   const val = event.target.value;
@@ -72,7 +72,7 @@ function clear() {
 }
 
 // add event listener for when the DOM is loaded
-document.addEventListener('LOADED_EVENT_GOES_HERE', () => {
+document.addEventListener('DOMContentLoaded', () => {
 
   // set the variable called display equal to the display element
   // HINT: use its id #display to get a reference to it
@@ -86,7 +86,7 @@ document.addEventListener('LOADED_EVENT_GOES_HERE', () => {
   // the decimal point is part of the number so append it
 
   // get a reference to the all clear button
-  // add a click event listener to call the function clear  
+  // add a click event listener to call the function clear
 
   // get a reference to all of the operators;
   // loop over each of the operators
@@ -96,4 +96,3 @@ document.addEventListener('LOADED_EVENT_GOES_HERE', () => {
   // should call the function performOperation
 
 });
-
