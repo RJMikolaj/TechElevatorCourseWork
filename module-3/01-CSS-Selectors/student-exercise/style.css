@@ -14,111 +14,116 @@
     font-family: "Roboto-Slab", Tahoma, Verdana, sans-serif;
   }
 
-body > aside {
-  border-right: 200px blue;
-  position: fixed;
-}
+  body {
+      display: grid;
+      grid-template-columns: 200px, 1fr;
+      grid-template-areas:
+          "logo1 logo2"
+          "nav 2400"
+          ". descriptions"
+          ". copyright";
+      grid-gap: 20px;
+      background-color: rgba(192, 192, 192, 0.1);
+    }
 
-body > aside > img {
-  height: 140px;
-  align-items: baseline;
-  position:fixed;
+    section {
+      grid-area: descriptions;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-areas: "WeDo OurWork Contact";
+    }
 
-}
+    #what-we-do {
+      grid-area: WeDo;
+      padding: 10px;
+      border-right: 1px solid;
+      padding: 20px;
+      border-right: 1px solid rgba(170, 239, 135, 0.8);
+      padding-right: 20px;
+      font-weight: none;
+    }
 
-body > main > header > img {
-  height: 140px;
-  align-items: baseline;
-}
+    #our-work {
+      grid-area: OurWork;
+      padding: 10px;
+      border-right: 1px solid rgba(170, 239, 135, 0.8);
+      padding-right: 20px;
+      padding-left: 20px;
 
-body > main > img {
-  max-width: 2400px;
-  height: auto;
-  padding-top: 100px;
-  padding-left: 100px;
-}
+    }
 
-body > aside > nav > ul {
-  width: 500px;
-  text-align: center;
-  margin-right: 20px;
-  font-size: 50px;
-  text-decoration-color: var(--blue);
-  font-family: "Roboto-Slab", Tahoma, Verdana, sans-serif;
-  font-weight: bold;
-  line-height: 100px;
-  position: relative;
+    #contact-us {
+      grid-area: Contact;
+      padding: 10px;
+      padding-left: 20px;
+    }
 
-}
+    section h2 {
+      color:#8cc36f;
+    }
 
-body aside ul {
-  text-align: center;
-  list-style: none;
-}
+    aside img {
+      grid-area: logo1;
+      height: 150px;
+      display: block;
+      margin-right: auto;
+      margin-left: auto;
+    }
 
-main > img {
-  position: relative;
+    aside {
+      width: 200px;
+      height: 100%;
+      border-right: 1px solid rgba(0, 173, 238, 0.4);
+    }
 
-  float: left;
-}
-
-body > main > header > img {
-  float: top;
-  float: left;
-  top: 0px;
-  margin-right: 20px;
-  padding-left: 150px;
-  height: 75px;
-}
-
-main > section {
-  top: 200px;
-    padding-top: 50px;
-  display: inline-flex;
-  word-wrap: break-word;
-}
+    header img {
+      grid-area: logo2;
+      height: 120px;
+      margin-bottom: 20px;
+    }
 
 
-nav ul {
-  float: left;
-  padding-top: 100px;
-  list-style: none;
-  text-align: center;
-  width: 200px;
-}
 
-aside {
-  position: fixed;
-  float: left;
-  padding-top: 50px;
-  padding-left: 50px;
-  padding-right: 50px;
-  padding-bottom: 50px;
-  text-align: center;
-  display: block;
-  width: 200px;
-}
+    main > img {
+      grid-area: 2400;
+      width: 100%;
+      margin-bottom: 20px;
+    }
 
-h2 {
-  font-size: 50px;
-  font-weight: bold;
-  color: var(--green);
-}
+    #social {
+      display: none;
+    }
 
-h3 {
-  font-size: 0px;
-}
+    header {
+      height: 120px;
+      margin-bottom: 20px;
+    }
 
-#social {
-  font-size: 0px;
-}
+    header p {
+      display: none;
+    }
 
-body > main > footer > div > div > img  {
-  position: relative;
-  padding-top: 50px;
-  padding-left: 20px;
-  padding-right: 20px;
-  float: left;
-  max-width: 0%;
-  height: auto;
-}
+    nav a {
+     display: block;
+     color: #00adee;
+     text-decoration: none;
+     font-weight: bold;
+     text-transform: uppercase;
+     text-align: center;
+     width: 125px;
+     margin-left: auto;
+     margin-right: auto;
+     padding-top: 16px;
+     padding-bottom: 16px;
+     border-bottom: 1px solid;
+    }
+
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul:nth-child(3) {
+      border-bottom: 0px;
+    }

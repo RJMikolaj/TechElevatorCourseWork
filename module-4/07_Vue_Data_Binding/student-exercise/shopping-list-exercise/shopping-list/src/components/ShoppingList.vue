@@ -1,6 +1,6 @@
 <template>
   <div class="shopping-list">
-    <h1>RJ's Shopping List</h1>
+    <h1>My Shopping List</h1>
     <ul>
       <li class="completed">Almond Milk</li>
       <li class="completed">Quinoa</li>
