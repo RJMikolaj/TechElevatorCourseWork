@@ -68,25 +68,17 @@ function lastDigit(x, y) {
 		seeColor("xxred") → ""
         seeColor("blueTimes") → "blue"
 */
-function seeColor(red, blue) {
-  let result = true;
-  let returnRed = "red";
-  let returnBlue = "blue";
-  let empty = ``;
-  if (red = returnRed) {
-    return returnRed;
-  }
-  if (red.endsWith("red")) {
-    return empty;
-  }
-  if (blue = returnBlue) {
-    return returnBlue;
-  }
-  if (blue.endsWith("blue")) {
-    return empty;
+function seeColor(x) {
+	let xRed = x.slice(0, 3);
+	let xBlue = x.slice(0, 4);
 
-  }
-
+	if(xRed == "red") {
+		return "red";
+	} else if (xBlue == "blue") {
+		return "blue";
+	} else {
+		return "";
+	}
 }
 
 /*
@@ -96,11 +88,9 @@ function seeColor(red, blue) {
 		oddOnly([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]) → [1, 3, 5, 7, 9, 11];
 		oddOnly([2, 4, 8, 32, 256]); → []
 */
-function oddOnly(n) {
-  let arr = [];
-  let odds = arr.filter(n => n%2)
-
-  console.log(odds);
+function oddOnly(x) {
+	odd = x.filter(i => i % 2 != 0);
+	return odd;
 }
 
 
@@ -172,6 +162,11 @@ function fizzBuzz(fb) {
 	filterEvens([100, 8, 21, 24, 62, 9, 7]) → [100, 8, 24, 62]
 */
 
+function filterEvens(x) {
+	even = x.filter(i => i % 2 == 0);
+	return even;
+}
+
 
 
 /*
@@ -182,6 +177,11 @@ function fizzBuzz(fb) {
 	filterBigNumbers([]) → []
 */
 
+function filterBigNumbers(x) {
+	bigNumbers = x.filter(i => i >= 100);
+	return bigNumbers;
+}
+
 /*
 11. **filterMultiplesOfX** Write a function to filter numbers that are a multiple of a
 parameter, `x` passed in.
@@ -189,6 +189,11 @@ parameter, `x` passed in.
 	filterMultiplesOfX([3, 5, 1, 9, 18, 21, 42, 67], 3) → [3, 9, 18, 21, 42]
 	filterMultiplesOfX([3, 5, 10, 20, 18, 21, 42, 67], 5) → [5, 10, 20]
 */
+
+function filterMultiplesOfX(x, y) {
+	multiples = x.filter(i => i % y == 0);
+	return multiples;
+}
 
 
 /*
@@ -204,10 +209,11 @@ firstName, lastName, and age. Populate the properties with your values.
 	}
 
 */
-function createObject(firstName, lastName, age) {
-const rj = Object.create(createObject);
-
-rj.firstName = "RJ";
-rj.lastName = "Mikolaj";
-rj.age = "28";
-}
+function createObject() {
+		const person = {
+			firstName: "RJ",
+			lastName: "Mikolaj",
+			age: 28
+		};
+	return person;
+	}
