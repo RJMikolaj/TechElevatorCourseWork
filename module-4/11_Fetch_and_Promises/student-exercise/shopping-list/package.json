@@ -4,6 +4,8 @@
   "description": "This exercise will test your knowledge of The Fetch API & Promises ",
   "main": "index.js",
   "scripts": {
+    "start": "./node_modules/.bin/http-server",
+
     "test": "cypress open",
     "test:headless": "cypress run"
   },
