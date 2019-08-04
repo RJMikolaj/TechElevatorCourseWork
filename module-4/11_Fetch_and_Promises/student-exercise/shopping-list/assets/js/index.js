@@ -8,7 +8,7 @@ loadButton.addEventListener("click", () => {
 });
 
 function loadGroceries() {
-    fetch('assets/data/shopping-list.json')
+fetch('assets/data/shopping-list.json')
     .then((response) => {
         return response.json();
     })
@@ -26,8 +26,6 @@ function loadGroceries() {
                 list.appendChild(tmpl);
             });
             itemsLoaded = true;
-        } else {
-            console.error('Your browser does not support templates');
         }
     })
     .catch((err) => {console.error(err)}); ;
