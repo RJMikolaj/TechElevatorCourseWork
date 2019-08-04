@@ -1,8 +1,8 @@
 <template>
     <div class="shopping-list">
-        <h1>My Shopping List</h1>
+        <h2>{{title}}</h2>
         <ul>
-            <li v-for="item in groceries"
+            <li v-for="item in data"
                 v-bind:key="item.id"
                 v-bind:class="{ completed: item.completed }"
                 v-on:click="changeStatus(item.id,$event)">
@@ -16,25 +16,18 @@
 
 <script>
 export default {
+    name: 'shopping-list',
+    props: {
+    },
     data() {
         return {
-            groceries: [
-                { id: 1, name: 'Oatmeal', completed: false },
-                { id: 2, name: 'Milk', completed: false },
-                { id: 3, name: 'Banana', completed: false },
-                { id: 4, name: 'Strawberries', completed: false },
-                { id: 5, name: 'Lunch Meat', completed: false },
-                { id: 6, name: 'Bread', completed: false },
-                { id: 7, name: 'Grapes', completed: false },
-                { id: 8, name: 'Steak', completed: false },
-                { id: 9, name: 'Salad', completed: false }
-            ]
+
         }
     },
     methods: {
         changeStatus(id,event) {
-            const arrIndex = this.groceries.findIndex((item) => item.id == id);
-            this.groceries[arrIndex].completed = !this.groceries[arrIndex].completed;
+            const arrIndex = this.data.findIndex((item) => item.id == id);
+            this.data[arrIndex].completed = !this.data[arrIndex].completed;
 
             // the checkbox might not have been target of the click event
             if( event.target.type != 'checkbox' ) {
@@ -42,6 +35,8 @@ export default {
                 checkbox.checked = !checkbox.checked;
             }
         }
+    },
+    computed: {
     }
 }
 </script>
@@ -54,14 +49,14 @@ export default {
     font-family: 'Roboto Condensed', sans-serif;
     border-radius: 10px;
 }
-h1 {
+h2{
     background:#f2f2f2;
     color:#5c8578;
     padding:10px;
     font-size:24px;
     text-transform: uppercase;
     text-align: center;
-    margin-bottom: 0px;
+    margin: 0px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
