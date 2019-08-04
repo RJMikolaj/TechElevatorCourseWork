@@ -49,7 +49,7 @@ function clickOperator() {
 }
 
 /**
- * Captures a number click and updates the display value.
+ * Captures a number click and updates the display value..
  * @param {Event} event
  */
 function clickNumber(event) {
