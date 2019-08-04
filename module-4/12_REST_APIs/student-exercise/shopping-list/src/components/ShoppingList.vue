@@ -19,6 +19,7 @@
 export default {
     data() {
         return {
+            API_URL: "http://5d430b6cbc64f90014a577b6.mockapi.io/groceries",
             groceries: []
         }
     },
@@ -26,14 +27,24 @@ export default {
         changeStatus(id,event) {
             const arrIndex = this.groceries.findIndex((item) => item.id == id);
             this.groceries[arrIndex].completed = !this.groceries[arrIndex].completed;
-            
+
             // the checkbox might not have been target of the click event
             // If the user clicks on the list item we still want to check the checkbox
             if( event.target.type != 'checkbox' ) {
                 const checkbox = event.target.querySelector('input[type="checkbox"]');
                 checkbox.checked = !checkbox.checked;
+                const checkMark = event.target.querySelector('.fa-check-circle').classList.toggle('completed');
+                marked();
             }
+        },
+        marked() {
+
         }
+    },
+    created() {
+          fetch(this.API_URL)
+            .then(response => response.json())
+            .then(groceries => (this.groceries = groceries));
     }
 }
 </script>
@@ -79,7 +90,6 @@ i.far.fa-check-circle {
   float: right;
   color: darkgray;
 }
-
 i.far.fa-check-circle.completed {
   color: green;
 }
