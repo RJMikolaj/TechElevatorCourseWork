@@ -77,12 +77,9 @@ function isSummer(month, day = 1, hemisphere = 'northern') {
  */
 //
 let unfilteredArray = [1, 2, 3, 4, 5, 6];
-function useParameterToFilterArray(numbersToFilter, func) {
-  return unfilteredArray.filter( (num) => {
-    return num % 2 ===0;
 
-  });
-
+function useParameterToFilterArray(filterFunction) {
+    return unfilteredArray.filter(filterFunction);
 }
 
 
@@ -99,14 +96,19 @@ function useParameterToFilterArray(numbersToFilter, func) {
  * @returns {number} the resultant number
  */
 
-function makeNumber(thisString = 0) {
-  let first = '42293';
-  let second = "443";
-  let firstNumber = parseInt(first, 10);
-  let secondNumber = parseInt(second, 10);
-  return thisString = makeNumber.first + makeNumber.second;
-  // let result = `${first} ${second}`;
-  // return result;
+// function makeNumber(thisString = 0) {
+//   let first = '42293';
+//   let second = "443";
+//   let firstNumber = parseInt(first, 10);
+//   let secondNumber = parseInt(second, 10);
+//   return thisString = makeNumber.first + makeNumber.second;
+//   // let result = `${first} ${second}`;
+//   // return result;
+// }
+function makeNumber(x, y) {
+  let xyString = x + y;
+  let xyNumber = parseInt(xyString, 10);
+  return xyNumber;
 }
 
 
@@ -119,12 +121,14 @@ function makeNumber(thisString = 0) {
  * @param {...number} num a series of numbers to add together
  * @returns {number} the sum of all the parameters (or arguments)
  */
-function addAll(arr) {
-  const sum = arr.reduce( (sum, val) => {
-    return sum + val;
-  });
+ function addAll(...args) {
+    let total = 0;
+    for(let i = 0; i < arguments.length; i++) {
+       total += args[i];
+     }
+     return total;
+  }
 
-}
 //   if(arr.length > 0) {
 //   return  sum =+ arr[i];
 //   }
@@ -138,12 +142,12 @@ function addAll(arr) {
  * an array and prepends 'Happy ' to the beginning of all the
  * words and returns them as a new array. Use the `map` function.
  */
- function makeHappy() {
-   var array1 = ['birthday', 'day'];
-   const happy = 'Happy';
-   happy.insertAdjacentHTML('beforebegin', array1);
-
- }
+ function makeHappy(x) {
+ let prependString = 'Happy';
+  return x.map(
+    i => `${prependString} ${i}`
+  )
+}
 
 
 /*
@@ -164,17 +168,32 @@ function addAll(arr) {
  * Use `map` and an anonymous function.
  */
 
+ function getFullAddressesOfProperties(x) {
+  return x.map(
+     i => `${i.streetNumber}` + " " + `${i.streetName}` + " " + `${i.streetType}` + " " + `${i.city}` + " " + `${i.state}` + " " + `${i.zip}`
+   )
+ }
+
 /*
  * Create and document a function called findLargest.
  *
  * Using `forEach`, find the largest element in an array.
  * It should work for strings and numbers.
  */
- findLargest = function(string, num, array ){
-   let thisArray = ["string", 5, 6];
-   thisArray.forEach(findLargest);
-    return Math.max.apply( Math, array );
-};
+ function findLargest(x) {
+let largest = 0;
+if(isNaN(x)) {
+  x.sort();
+  x.reverse();
+  return x[0];
+} else {
+  x.forEach(i => {
+    if(largest < i)
+    largest = i;
+  })
+  return largest;
+}
+}
 
 /*
  * CHALLENGE
