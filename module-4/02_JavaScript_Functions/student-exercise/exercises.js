@@ -178,7 +178,7 @@ function makeNumber(x, y) {
  * Create and document a function called findLargest.
  *
  * Using `forEach`, find the largest element in an array.
- * It should work for strings and numbers.
+ * It should work for strings and nummbers.
  */
  function findLargest(x) {
 let largest = 0;
